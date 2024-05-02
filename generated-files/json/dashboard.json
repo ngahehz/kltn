@@ -1,0 +1,40 @@
+{
+  "QPushButton": [
+    {
+      "name": "top_logo",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/font_awesome/brands/pushed.png"
+    },
+    {
+      "name": "mini_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/window_minimize.png"
+    },
+    {
+      "name": "maxi_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/maximize.png"
+    },
+    {
+      "name": "close_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/x.png"
+    },
+    {
+      "name": "menu_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/menu.png"
+    },
+    {
+      "name": "all_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/file.png"
+    },
+    {
+      "name": "tags_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/tag.png"
+    },
+    {
+      "name": "settings_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/settings.png"
+    },
+    {
+      "name": "add_tag_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/plus.png"
+    }
+  ]
+}

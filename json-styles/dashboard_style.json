@@ -1,0 +1,107 @@
+{
+    "QMainWindow": [
+        {
+            "tittle": "dashboard_ui",
+            "icon": ":/font_awesome_brands/icons/font_awesome/brands/windows.png",
+            "frameless": true,
+            "transluscentBg": true,
+            "navigation": [
+                {
+                    "close": "close_btn",
+                    "moveWindow": "header",
+                    "minimize": "mini_btn"
+                }
+            ]
+        }
+    ],
+    "QSettings": [
+        {
+            "ThemeSettings": [
+                {
+                    "CustomTheme": [
+                        {
+                            "Background-color": "#dde6ff",
+                            "Text-color": "#333333",
+                            "Accent-color": "#ff79c6",
+                            "Theme-name": "TINA1",
+                            "Icons-color": "#f1f2f6",
+                            "Default-Theme": true
+                        }
+                    ]
+                }
+            ],
+            "AppSettings": {
+                "OrginizationName": "TINA",
+                "ApplicationName": "TINA Company",
+                "OrginizationDormain": "TINA.org"
+            }
+        }
+    ],
+    "QCustomSlideMenu": [
+        {
+            "name": "left_menu_1",
+            "defaultSize": [
+                {
+                    "width": 55,
+                    "height": "parent"
+                }
+            ],
+            "collapsedSize": [
+                {
+                    "width": 55,
+                    "height": "parent"
+                }
+            ],
+            "expandedSize": [
+                {
+                    "width": 150,
+                    "height": "parent"
+                }
+            ],
+            "toggleButton": [
+                {
+                    "buttonName": "menu_btn",
+                    "icons": [
+                        {
+                            "whenMenuIsCollapsed": ":/feather/icons/feather/menu.png",
+                            "whenMenuIsExpanded": ":/feather/icons/feather/chevrons-right.png"
+                        }
+                    ]
+                }
+            ],
+            "menuTransitionAnimation": [
+                {
+                    "animationDuration": 500,
+                    "animationEasingCurve": "OutQuad"
+                }
+            ]
+        },
+        {
+            "name": "left_menu_2",
+            "defaultSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "collapsedSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "expandedSize": [
+                {
+                    "width": 150,
+                    "height": "parent"
+                }
+            ],
+            "menuTransitionAnimation": [
+                {
+                    "animationDuration": 500,
+                    "animationEasingCurve": "OutQuad"
+                }
+            ]
+        }
+    ]
+}

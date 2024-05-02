@@ -1,0 +1,32 @@
+{
+    
+    "QCustomSlideMenu": [
+        
+        {
+            "name": "info_right",
+            "defaultSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "collapsedSize": [
+                {
+                    "width": 0,
+                    "height": "parent"
+                }
+            ],
+            "expandedSize": [
+                {
+                    "width": 200,
+                    "height": "parent"
+                }
+            ],
+            "menuTransitionAnimation": [
+                {
+                    "animationDuration": 500,
+                    "animationEasingCurve": "OutQuad"
+                }
+            ]
+        }]
+}

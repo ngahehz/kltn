@@ -1,0 +1,29 @@
+"C:/Users/Hi/Desktop/pj dtmn.docx"
+"D:/DL/pj.docx"
+
+
+"C:/Users/Hi/Desktop/DCT1203_3120410339_Huỳnh Lê Thanh Nga.pdf"
+"D:/AI+/Các hệ thống thông minh.pdf"
+"D:/PPNC/3120410339 - Huỳnh Lê Thanh Nga.pdf"
+"D:/PTNDM/3120410339 - Huỳnh Lê Thanh Nga.pdf"
+"D:/temp/Week 3 - Histogram.pdf"
+"D:/TTTM/BT_HE_MO.pdf"
+"C:/Users/Hi/Desktop/9F9B291C-5A9E-11EE-90B6-F71C97318934.pdf"
+
+Installing collected packages: mpmath, sympy, networkx, MarkupSafe, jinja2, torch, torchvision, torchaudio
+Installing collected packages: urllib3, safetensors, regex, pyyaml, idna, fsspec, filelock, colorama, charset-normalizer, certifi, tqdm, requests, huggingface-hub, tokenizers, transformers
+Installing collected packages: underthesea-core, python-crfsuite, urllib3, threadpoolctl, scipy, regex, PyYAML, joblib, idna, colorama, charset-normalizer, tqdm, scikit-learn, requests, Click, nltk, underthesea
+Installing collected packages: sentencepiece, mpmath, sympy, protobuf, MarkupSafe, langid, fsspec, sacremoses, jinja2, huggingface-hub, torch, tokenizers, trankit 
+Installing collected packages: cython
+Installing collected packages: safetensors, transformers, sentence-transformers
+Installing collected packages: pytz, tzdata, pandas
+Installing collected packages: tabulate, sklearn-crfsuite, pyvi --- t uninstall đây
+Installing collected packages: pycryptodome, PDFMiner -- gỡ
+Installing collected packages: cryptography, pdfminer.six -- gỡ
+
+
+F:\setting\elasticsearch-8.7.0-windows-x86_64\elasticsearch-8.7.0\bin
+
+
+
+

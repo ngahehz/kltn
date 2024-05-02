@@ -1,0 +1,25 @@
+{
+
+    "mappings": {
+      "dynamic": "true",
+      "_source": {
+        "enabled": "true"
+      },
+      "properties": {
+        "id": {
+          "type": "text"
+        },
+        "title": {
+          "type": "text"
+        },
+        "title_vector": {
+          "type": "dense_vector",
+          "dims": 768
+        }
+      }
+    }
+  }
+
+  sao có giới hạn cái content hay sao á ta
+  ờ với lại hình như file test t đọc theo cái này là sai r
+  rồi t thấy là cái này lưu cái rút gọn ok hơn á, đợi bên hà tiên phần đó z

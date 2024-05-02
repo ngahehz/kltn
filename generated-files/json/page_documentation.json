@@ -1,0 +1,12 @@
+{
+  "QPushButton": [
+    {
+      "name": "advanced_search",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/font_awesome/solid/sliders.png"
+    },
+    {
+      "name": "noti_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/font_awesome/regular/bell.png"
+    }
+  ]
+}

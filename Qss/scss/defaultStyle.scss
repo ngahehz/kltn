@@ -1,0 +1,301 @@
+//             //===================================================//
+//             // FILE AUTO-GENERATED. PUT YOUR DEFAULT STYLES HERE.
+//             // THESE STYLES WILL OVERIDE THE THEME STYLES
+//             //====================================================//
+
+///////////////////////// HEADER ///////////////////////
+#header {
+    background-color: #6272a4;
+}
+
+#frame,
+#frame_4,
+#top_logo {
+    background-color: transparent;
+
+}
+
+#frame_4 .QPushButton {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-radius: 5px;
+}
+
+#frame_4 .QPushButton:hover {
+    background-color: #bd93f9;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+#frame_4 .QPushButton:pressed {
+    background-color: #ff79c6;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+#label_2 {
+    background-color: transparent;
+    color: rgb(234, 108, 108);
+    font-weight: 900;
+}
+
+// #frame_5 {
+//     background-color: transparent;
+//     background-image: url("C:/Users/Hi/Desktop/bell_resize.png");
+//     background-position: center;
+//     background-repeat: no-repeat;
+// }
+
+////////////////// LEFT MENU ///////////////////////
+#left_menu_1 {
+    background-color: #6272a4;
+    border-top: 3px solid #6a7cb1;
+}
+
+#left_menu_1 .QPushButton {
+    padding: 10px 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(56, 53, 53, 0.47);
+    color: #f8f8f2;
+
+    &:hover {
+        background-color: #bd93f9;
+    }
+    &:pressed {
+        background-color: #ff79c6;
+        color: rgb(255, 255, 255);
+    }
+    &:focus {
+        background-color: #566388;
+        color: rgb(255, 255, 255);
+        border-left: 2px solid #ff79c6;
+    }
+}
+
+#widget_3{
+    border-top: 3px solid #99a5cb;
+    // background-color: transparent;
+}
+
+#scrollAreaWidgetContents_2{
+    background-color: transparent;
+
+}
+
+#scrollArea{
+    background-color: transparent;
+}
+#left_menu_2 {
+    background-color: #495474;
+    color: #f8f8f2;
+}
+
+#left_menu_2 .QFrame {
+    background-color: transparent;
+}
+
+#left_menu_2 .QPushButton {
+    padding: 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    text-align: left;
+    border-bottom: 1px solid rgba(56, 53, 53, 0.47);
+    color: #f8f8f2;
+
+    &:hover {
+        background-color: #5d6c99;
+    }
+
+    &:pressed {
+        background-color: rgb(189, 147, 249);
+        color: rgb(255, 255, 255);
+    }
+}
+////////////////////////////////////////////////////
+
+////////////////// (CONTENT) STACKED WIDGET ///////////////////////
+#page_3,
+#widget,
+#widget_7,
+#tabWidget_2,
+#widget_2,
+#info_right,
+#frame_9,
+#frame,
+#label,
+#file_tab,
+#info_fr .QLabel,
+#frame_15 {
+    background-color: transparent;
+}
+
+#stackedWidget {
+    border-top: 3px solid #ff79c6;
+
+}
+/// PAGE 1 - DASHBOARD ///
+// #frame_2{
+    // background-image: url("C:/Users/Hi/Desktop/TINA.png");
+    // background-position: center;
+    // background-repeat: no-repeat;
+// }
+
+
+/// PAGE 3 - INFO_RIGHT ///
+
+#note_txt,
+#info_fr {
+    background-color: rgba(255, 255, 255, 0.626);
+    border-radius: 10px;
+    border: 1px solid rgba(98, 98, 98, 0.258);
+    padding: 7px;
+}
+
+#noti_fr_btn {
+    background-color: #6272a4;
+    border-radius: 10px;
+}
+
+#noti_btn {
+    background-color: transparent;
+    border: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/// PAGE 3 - TABWIDGET_2 ///
+
+// #add_btn {
+//     background-color: #546391;
+// }
+
+#tableWidget_2 {
+    border: 1px solid rgba(255, 255, 255, 30);
+    background-color: rgba(255, 255, 255, 0.626);
+}
+
+QHeaderView::section{
+	// background-color: #afc0f4;
+	background-color: #6272a4;
+    color: white;
+	max-width: 30px;
+	border: none;
+	border-style: none;
+}
+
+QHeaderView::section:vertical
+{
+    border: 1px solid #6272a4;
+}
+
+
+#tableWidget_2 .QCheckBox {
+    padding-left: 16px;
+}
+
+#tableWidget_2 .QPushButton {
+	border: 2px solid #6272a4;
+	border-radius: 5px;	
+    color: #000000;
+}
+
+#tableWidget_2 .QPushButton:pressed {	
+	background-color: #546391;
+	border: 2px solid #ff79c6;
+}
+
+QPushButton {
+	border: 2px solid #6272a4;
+	border-radius: 5px;	
+    color: #000000;
+}
+
+
+QLineEdit {
+	background-color: #b0c0ef;
+	border-radius: 5px;
+	border: 2px solid #6272a4;
+	padding-left: 10px;
+    color: #f8f8f2;
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid #ff79c6;
+}
+
+
+
+/// PAGE 2 ///
+#frame_14,
+#widget_6,
+#label_9,
+#frame_11,
+#widget_4,
+#label_7,
+#label_3,
+#main_img_fr,
+#widget_color_fr,
+#logo_icon_fr,
+#icon_color_fr,
+#bg_img_fr,
+#accent_color_fr,
+#accent_color_lb,
+#bg_img_lb,
+#icon_color_lb,
+#logo_icon_lb,
+#main_img_lb,
+#widget_color_lb,
+#pg2_container1
+{
+    background-color: transparent
+}
+
+#page_2{
+    // background-color: #dde6ff;
+    background-color: rgba(255, 255, 255, 0.219);
+}
+
+#frame_10{
+    padding-top: 15px;
+    padding-right: 6px;
+    background-color: transparent;
+    // background-color: #ff79c6;
+}
+
+#widget_5{
+    border: 2px dashed rgba(0, 0, 0, 0.881);
+}
+
+#color_bg_demo_lb{
+    margin-bottom: 14px;
+    border: 2px dashed rgba(0, 0, 0, 0.881);
+}
+
+
+/// DROP DOWN NOTI ///
+
+QLabel[objectName^="dropdownItem"] {
+    background-color: transparent;
+    color: black;
+    border-bottom : 1px solid black;
+
+    &:hover {
+        border: $BORDER_SELECTION_3;
+    }
+
+    &:focus {
+        background-color: $COLOR_ACCENT_2;
+        color: $COLOR_BACKGROUND_4;
+    }
+}
+
+
+//             //===================================================//
+//             // END //
+//             //====================================================//

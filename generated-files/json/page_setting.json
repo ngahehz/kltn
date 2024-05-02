@@ -1,0 +1,36 @@
+{
+  "QPushButton": [
+    {
+      "name": "push_main_img_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "pushButton_4",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/image.png"
+    },
+    {
+      "name": "push_logo_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "push_accent_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "push_icon_color_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "push_widget_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "upload_img_back_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/material_design/refresh.png"
+    },
+    {
+      "name": "reset_all_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/refresh-cw.png"
+    }
+  ]
+}
