@@ -20,6 +20,11 @@ Installing collected packages: pytz, tzdata, pandas
 Installing collected packages: tabulate, sklearn-crfsuite, pyvi --- t uninstall đây
 Installing collected packages: pycryptodome, PDFMiner -- gỡ
 Installing collected packages: cryptography, pdfminer.six -- gỡ
+Installing collected packages: sniffio, h11, httpcore, anyio, httpx, python-telegram-bot
+Installing collected packages: pyaes, pyasn1, rsa, telethon
+Installing collected packages: summa
+
+
 
 
 F:\setting\elasticsearch-8.7.0-windows-x86_64\elasticsearch-8.7.0\bin

@@ -21,7 +21,7 @@ def addFileTag(id, file_id, tag_id):
     dataConnect = sqlite3.connect("dtb3003.db")
 
     query = """
-        INSERT INTO FILE_TAG (ID, FILE_ID, TAG_ID) VALUES (?, ?)
+        INSERT INTO FILE_TAG (ID, FILE_ID, TAG_ID) VALUES (?, ?, ?)
     """
 
     cursor = dataConnect.cursor()

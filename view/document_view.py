@@ -30,7 +30,9 @@ class Document(QWidget):
         self.load_table()
         self.load_cbb()
         self.ui.new_tag_btn.clicked.connect(self.add_new_frame)
-        self.ui.tableWidget_2.keyPressEvent = self.keyPressEvent
+        self.ui.new_tag_cbb.currentIndexChanged.connect(self.new_tag_cbb_changed)
+
+        self.ui.tableWidget_2.keyPressEvent = self.keyPressEvent                ## Sự kiện di chuyển lên xuống bằng bàn phím trên table
         self.ui.comboBox.currentIndexChanged.connect(self.sort_table)
 
     def show_advanced_search_dialog(self):
@@ -88,7 +90,7 @@ class Document(QWidget):
                 self.ui.tableWidget_2.setItem(row_position, 3, QTableWidgetItem(str(new_row[2])))
                 self.ui.tableWidget_2.setItem(row_position, 4, QTableWidgetItem())
                 self.ui.tableWidget_2.setItem(row_position, 5, QTableWidgetItem())
-                self.ui.tableWidget_2.setItem(row_position, 5, QTableWidgetItem())
+                self.ui.tableWidget_2.setItem(row_position, 6, QTableWidgetItem())
 
                 button.clicked.connect(lambda event, id = id: self.delete_file(id))
                 combobox.activated.connect(lambda index, combo_box=combobox: self.combo_box_changed(index, combo_box))
@@ -116,11 +118,13 @@ class Document(QWidget):
         self.ui.dir_lb.mousePressEvent = lambda event: self.open_folder(self.row_focus[2])
 
         self.ui.size_lb.setText("<b>Size</b>: " + str(round(self.row_focus[4], 2)) + " kB")
+
         if(self.row_focus[7] == None):
             self.ui.note_txt.setText("")
-            return
-        self.ui.note_txt.setText(str(self.row_focus[7]))
+        else:
+            self.ui.note_txt.setText(str(self.row_focus[7]))
 
+        self.ui.new_tag_cbb.setCurrentIndex(1)
         self.tag_widget()
 
     ################ CẬP NHẬT NOTES CỦA FILE ################ (t thêm s cho nó không có màu)
@@ -314,7 +318,9 @@ class Document(QWidget):
 
     ### CONTEXT ###
     def contextMenuEvent(self, event):
-        if self.ui.tableWidget_2.geometry().contains(event.pos()):
+        if self.ui.tableWidget_2.underMouse():
+        # if self.ui.tableWidget_2.geometry().contains(event.globalPos()):
+        # if self.ui.tableWidget_2.rect().contains(event.pos()):
             menu = QMenu(self)
             openInHere = menu.addAction("open in here")
             openByApp = menu.addAction("open by app") 
@@ -377,6 +383,8 @@ class Document(QWidget):
         if index.isValid():
             row = index.row()
             self.ui.tableWidget_2.setCurrentCell(row, 0)
+        else:
+            return
             
         messageBox = QMessageBox()
         messageBox.setWindowTitle('Warning')
@@ -393,6 +401,8 @@ class Document(QWidget):
         reply = messageBox.exec_()
         if reply == QMessageBox.Yes:
             self.controller.delete_file(id)
+            if self.ui.info_right.expanded:
+                self.ui.info_right.collapseMenu()
             selected_row = self.ui.tableWidget_2.currentRow()
             if selected_row >= 0:
                 self.ui.tableWidget_2.removeRow(selected_row)
@@ -414,7 +424,6 @@ class Document(QWidget):
 
         self.load_table()
 
-
     def sort_table(self):
         current_index = self.ui.comboBox.currentIndex()
     
@@ -432,9 +441,25 @@ class Document(QWidget):
             self.ui.tableWidget_2.sortItems(3, Qt.SortOrder.DescendingOrder)
 
     def load_cbb(self):
+        self.ui.new_tag_cbb.addItem("(+)")
         self.ui.new_tag_cbb.addItem("")
         for value in self.controller.get_tags().values():
             self.ui.new_tag_cbb.addItem(value[1])
+        self.ui.new_tag_cbb.setCurrentIndex(1)
+
+    def new_tag_cbb_changed(self):
+        if self.ui.new_tag_cbb.currentText() == "(+)":
+            text, ok = QInputDialog.getText(self, "Enter tag Name", "Enter the new tag name:")
+            if ok:
+                result = self.controller.add_tag_to_database(text)
+                if result[0]:
+                    self.ui.new_tag_cbb.addItem(text)
+                    self.ui.new_tag_cbb.setCurrentIndex(self.ui.new_tag_cbb.count() - 1)
+                else:
+                    QMessageBox.warning(self, "Notification", "Tag name already exists")
+                    self.ui.new_tag_cbb.setCurrentIndex(1)
+            else:
+                self.ui.new_tag_cbb.setCurrentIndex(1)
 
     def tag_widget(self):
         if self.ui.new_tag_wg.layout() is None:
@@ -451,9 +476,10 @@ class Document(QWidget):
         id = self.row_focus[0]
         self.add_new_frame(self.controller.get_files_tags(id))
 
-
     def add_new_frame(self, list = None):
+        print("list",list)
         if list:
+            # print("1")
             for i, tag in enumerate(list.values()):
                 new_frame = self.create_frame(self.controller.get_tags()[tag[2]][1])
                 row = i // 2 + 1
@@ -464,9 +490,17 @@ class Document(QWidget):
                 new_frame.setMinimumWidth(88)
                 
         elif self.ui.new_tag_cbb.currentText() == "":
+            # print("2")
             return
         
         else:
+            print("3")
+            # print(self.row_focus[0], self.ui.new_tag_cbb.currentText())
+            result = self.controller.add_file_tag_to_database(self.row_focus[0], self.ui.new_tag_cbb.currentText())
+            if not result[0]:
+                QMessageBox.warning(self, "Notification", "Tag name already exists in this file")
+                self.ui.new_tag_cbb.setCurrentIndex(1)
+                return
             new_frame = self.create_frame(self.ui.new_tag_cbb.currentText())
             row = len(self.frames) // 2 + 1
             col = len(self.frames) % 2
@@ -507,7 +541,7 @@ class Document(QWidget):
             )
         button.setMaximumSize(QtCore.QSize(23, 23))
         button.setMinimumSize(QtCore.QSize(23, 23))
-        button.clicked.connect(lambda: self.remove_frame(frame))
+        button.clicked.connect(lambda: self.remove_frame(frame, text))
         button.setIcon(QtGui.QIcon("Qss/icons/000000/feather/window_close.png"))
         button.setIconSize(QtCore.QSize(8, 8))
 
@@ -521,15 +555,13 @@ class Document(QWidget):
         return frame
     
 
-    def remove_frame(self, frame):
+    def remove_frame(self, frame, text):
         self.layout.removeWidget(frame)
         frame.deleteLater()
         self.frames.remove(frame)
+        
+        self.controller.delete_file_tag(self.row_focus[0], self.controller.get_tag_id_by_name(text))
 
-        # if len(self.frames) % 2 == 0:
-        #     self.layout.removeRow(row)
-
-        # Cập nhật lại chỉ mục hàng và cột của các frame còn lại
         for index, f in enumerate(self.frames):
             row = index // 2 + 1
             col = index % 2

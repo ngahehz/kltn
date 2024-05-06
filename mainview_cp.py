@@ -2,7 +2,7 @@ import pickle, os
 import regex as re
 from sklearn.metrics import classification_report
 from underthesea import word_tokenize
-import unicodedata
+import unicodedata, time
 
 MODEL_PATH = "D:/KLTN/QLCN/data/models"
 
@@ -95,7 +95,6 @@ def chuan_hoa_dau_tu_tieng_viet(word):
         # chars[nguyen_am_index[2]] = bang_nguyen_am[x][0]
     return ''.join(chars)
 
-
 def is_valid_vietnam_word(word):
     chars = list(word)
     nguyen_am_index = -1
@@ -112,6 +111,7 @@ def is_valid_vietnam_word(word):
 
 
 def chuan_hoa_dau_cau_tieng_viet(sentence):
+    # sentence = sentence.lower() # chỗ này mà bỏ đi là nó lạ lắm nè
     words = sentence.split()
     for index, word in enumerate(words):
         cw = re.sub(r'(^\p{P}*)([p{L}.]*\p{L}+)(\p{P}*$)', r'\1/\2/\3', word).split('/')
@@ -122,14 +122,16 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
     return ' '.join(words)
 
 def text_preprocess(document):
+    document = document.lower() # phải đưa về chữ thường trước cái tokenization
+    document = re.sub(r'https?://\S+', '', document)
+    document = re.sub(r'\[\d+(?:,\s?\d+)*\]', '', document)
     # chuẩn hóa unicode
     document = unicodedata.normalize('NFC', document)
+    # document = convert_unicode(document)
     # chuẩn hóa cách gõ dấu tiếng Việt
     document = chuan_hoa_dau_cau_tieng_viet(document)
     # tách từ
     document = word_tokenize(document, format="text")
-    # đưa về lower
-    document = document.lower()
     # xóa các ký tự không cần thiết
     document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
     # xóa khoảng trắng thừa
@@ -158,8 +160,8 @@ label_encoder = pickle.load(open(os.path.join(MODEL_PATH,"label_encoder.pkl"), '
 #     all_text += paragraph.text + "\n"
 
 # import PyPDF2
-# # file_path = "C:/Users/Hi/Desktop/9F9B291C-5A9E-11EE-90B6-F71C97318934.pdf" cái này bất ổn quá
-# file_path = "D:/AI+/Các hệ thống thông minh.pdf"
+# file_path = "C:/Users/Hi/Desktop/9F9B291C-5A9E-11EE-90B6-F71C97318934.pdf" #cái này bất ổn quá
+# # file_path = "D:/AI+/Các hệ thống thông minh.pdf"
 
 # with open(file_path, 'rb') as file:
 #     reader = PyPDF2.PdfReader(file)
@@ -170,39 +172,61 @@ label_encoder = pickle.load(open(os.path.join(MODEL_PATH,"label_encoder.pkl"), '
 #         all_text += page.extract_text()
         
 
+print("a")
+# all_text = """Bắc nồi lên bếp, cho vào khoảng 200ml nước, đổ gói rau củ khô nằm trong gói mì vào. Thả mì vào luộc trong khoảng 3 phút rồi cho cho gói gia vị vào.
+# Dùng nĩa từ từ làm tơi phần mì này ra, cho 3 con tôm, cẩn thận đập 1 quả trứng gà và thêm 1 muỗng cà phê dầu ớt. Đậy nắp lai và nấu thêm 2 phút nữa thì tắt bếp.
+# Gắp mì tôm và topping cho vào chén rồi rưới nước mì vào. Cẩn thận cho đặt trứng lên trên cùng, trộn đều và thưởng thức nhé!"""
 
-all_text = """Bắc nồi lên bếp, cho vào khoảng 200ml nước, đổ gói rau củ khô nằm trong gói mì vào. Thả mì vào luộc trong khoảng 3 phút rồi cho cho gói gia vị vào.
-Dùng nĩa từ từ làm tơi phần mì này ra, cho 3 con tôm, cẩn thận đập 1 quả trứng gà và thêm 1 muỗng cà phê dầu ớt. Đậy nắp lai và nấu thêm 2 phút nữa thì tắt bếp.
-Gắp mì tôm và topping cho vào chén rồi rưới nước mì vào. Cẩn thận cho đặt trứng lên trên cùng, trộn đều và thưởng thức nhé!"""
+# all_text = text_preprocess(all_text)
+# all_text = remove_stopwords(all_text)
 
-all_text = text_preprocess(all_text)
-all_text = remove_stopwords(all_text)
-
-# print('Text:', all_text)
 
 # model = pickle.load(open(os.path.join(MODEL_PATH,"naive_bayes.pkl"), 'rb'))
 model1 = pickle.load(open(os.path.join(MODEL_PATH,"svm.pkl"), 'rb'))
 model2 = pickle.load(open(os.path.join(MODEL_PATH,"naive_bayes.pkl"), 'rb'))
 model3 = pickle.load(open(os.path.join(MODEL_PATH,"linear_classifier.pkl"), 'rb'))
 
-for model in [ model2, model3]:
-    probabilities = model.predict_proba([all_text])[0]
+# for model in [ model2, model3]:
+#     probabilities = model.predict_proba([all_text])[0]
 
-    # Sắp xếp các xác suất theo thứ tự giảm dần và lấy hai lớp có xác suất cao nhất
+#     # Sắp xếp các xác suất theo thứ tự giảm dần và lấy hai lớp có xác suất cao nhất
+#     top_labels_indices = probabilities.argsort()[-2:][::-1]
+#     top_labels = model.classes_[top_labels_indices]
+
+#     top_probabilities = probabilities[top_labels_indices]
+
+#     # In ra nhãn và xác suất
+#     for label, prob in zip(top_labels, top_probabilities):
+#         print(f"Nhãn: {label}, Xác suất: {prob:.4f}")
+
+# label = model1.predict([all_text])
+# print('Predict label:', label_encoder.inverse_transform(label))
+
+# label = model2.predict([all_text])
+# print('Predict label:', label_encoder.inverse_transform(label))
+
+# label = model3.predict([all_text])
+# print('Predict label:', label_encoder.inverse_transform(label))
+
+def temp (text):
+    text = text_preprocess(text)
+    text = remove_stopwords(text)
+
+    probabilities = model3.predict_proba([text])[0]
     top_labels_indices = probabilities.argsort()[-2:][::-1]
-    top_labels = model.classes_[top_labels_indices]
+    top_labels = model3.classes_[top_labels_indices]
 
-    print("Two most likely labels:", top_labels)
+    top_probabilities = probabilities[top_labels_indices]
 
-label = model1.predict([all_text])
-print('Predict label:', label_encoder.inverse_transform(label))
+    # In ra nhãn và xác suất
+    for label, prob in zip(top_labels, top_probabilities):
+        print(f"Nhãn: {label}, Xác suất: {prob:.4f}")
 
-label = model2.predict([all_text])
-print('Predict label:', label_encoder.inverse_transform(label))
-
-label = model3.predict([all_text])
-print('Predict label:', label_encoder.inverse_transform(label))
-
-
-
+    if abs(top_probabilities[0] - top_probabilities[1]) <= 0.3:
+        lb = [label_encoder.inverse_transform([x]) for x in top_labels]
+        return lb
+    elif top_probabilities[0] > top_probabilities[1]:
+        return label_encoder.inverse_transform([top_labels[0]])
+    else:
+        return label_encoder.inverse_transform([top_labels[1]])
 

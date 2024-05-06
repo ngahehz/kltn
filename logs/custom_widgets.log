@@ -4288,3 +4288,528 @@ elastic_transport.ConnectionError: Connection error caused by: NewConnectionErro
 2024-05-01 17:20:47,256 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
 2024-05-01 17:20:47,414 - INFO - Checking icons for qt designer app.
 2024-05-01 17:20:47,569 - INFO - all icons have been checked and missing icons generated!
+2024-05-02 08:56:55,407 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-02 08:56:55,408 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-02 08:56:56,609 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-02 08:56:56,647 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-02 08:56:56,929 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-02 08:56:58,599 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-02 08:56:58,767 - INFO - Use pytorch device_name: cpu
+2024-05-02 08:57:01,316 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-02 08:57:02,123 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-02 08:57:02,276 - INFO - Checking icons for qt designer app.
+2024-05-02 08:57:02,467 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:13:13,258 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:13:13,270 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:13:14,778 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:13:14,815 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:13:15,699 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:13:17,651 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:13:17,822 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:13:21,249 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:13:22,428 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:13:22,587 - INFO - Checking icons for qt designer app.
+2024-05-03 16:13:22,858 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:16:43,159 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:16:43,159 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:16:44,190 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:16:44,194 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:16:44,496 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:16:46,232 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:16:46,324 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:16:48,937 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:16:49,679 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:16:49,844 - INFO - Checking icons for qt designer app.
+2024-05-03 16:16:50,025 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:19:01,013 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:19:01,015 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:19:02,134 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:19:02,134 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:19:02,423 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:19:04,063 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:19:04,189 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:19:06,683 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:19:07,498 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:19:07,711 - INFO - Checking icons for qt designer app.
+2024-05-03 16:19:07,893 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:20:08,863 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:20:08,867 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:20:10,013 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:20:10,013 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:20:10,823 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:20:11,747 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:20:11,829 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:20:14,318 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:20:15,013 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:20:15,173 - INFO - Checking icons for qt designer app.
+2024-05-03 16:20:15,324 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:21:08,276 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:21:08,281 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:21:08,871 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:21:08,871 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:21:09,191 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:21:10,279 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:21:10,354 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:21:13,161 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:21:13,787 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:21:13,938 - INFO - Checking icons for qt designer app.
+2024-05-03 16:21:14,076 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:24:47,688 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:24:47,688 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:24:48,843 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:24:48,843 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:24:49,659 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:24:51,091 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:24:51,188 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:24:55,008 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:24:55,220 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:24:55,472 - INFO - Checking icons for qt designer app.
+2024-05-03 16:24:55,740 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:43:28,232 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:43:28,235 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:43:29,289 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:43:29,295 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:43:29,600 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:43:30,634 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:43:30,708 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:43:33,097 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:43:33,814 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:43:34,007 - INFO - Checking icons for qt designer app.
+2024-05-03 16:43:34,184 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:45:18,162 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:45:18,164 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:45:18,754 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:45:18,757 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:45:19,066 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:45:19,884 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:45:19,964 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:45:22,133 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:45:22,757 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:45:22,923 - INFO - Checking icons for qt designer app.
+2024-05-03 16:45:23,098 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:48:22,726 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:48:22,733 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:48:23,894 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:48:23,896 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:48:24,707 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:48:26,051 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:48:26,123 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:48:28,853 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:48:29,051 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:48:29,209 - INFO - Checking icons for qt designer app.
+2024-05-03 16:48:29,376 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:52:52,776 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:52:52,776 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:52:53,410 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:52:53,415 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:52:53,716 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:52:54,532 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:52:54,620 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:52:57,355 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:52:57,572 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:52:57,735 - INFO - Checking icons for qt designer app.
+2024-05-03 16:52:57,926 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:53:43,950 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:53:43,950 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:53:45,016 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:53:45,016 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:53:45,827 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:53:47,286 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:53:47,366 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:53:50,194 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:53:50,389 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:53:50,545 - INFO - Checking icons for qt designer app.
+2024-05-03 16:53:50,716 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 16:55:59,750 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 16:55:59,751 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 16:56:00,286 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 16:56:00,286 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 16:56:00,599 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 16:56:01,411 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 16:56:01,522 - INFO - Use pytorch device_name: cpu
+2024-05-03 16:56:03,781 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:56:04,456 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 16:56:04,631 - INFO - Checking icons for qt designer app.
+2024-05-03 16:56:04,801 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 20:33:11,734 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 20:33:11,735 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 20:33:12,898 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 20:33:12,898 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 20:33:13,207 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 20:33:14,004 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 20:33:14,077 - INFO - Use pytorch device_name: cpu
+2024-05-03 20:33:16,148 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:33:16,636 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:33:16,793 - INFO - Checking icons for qt designer app.
+2024-05-03 20:33:16,960 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 20:34:32,071 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 20:34:32,071 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 20:34:32,669 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 20:34:32,669 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 20:34:33,605 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 20:34:34,401 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 20:34:34,496 - INFO - Use pytorch device_name: cpu
+2024-05-03 20:34:36,580 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:34:37,141 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:34:37,332 - INFO - Checking icons for qt designer app.
+2024-05-03 20:34:37,540 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 20:35:52,376 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 20:35:52,376 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 20:35:53,454 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 20:35:53,454 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 20:35:54,270 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 20:35:55,030 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 20:35:55,108 - INFO - Use pytorch device_name: cpu
+2024-05-03 20:35:56,841 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:35:57,342 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:35:57,518 - INFO - Checking icons for qt designer app.
+2024-05-03 20:35:57,702 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 20:38:01,823 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 20:38:01,823 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 20:38:02,390 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 20:38:02,391 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 20:38:02,814 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 20:38:03,707 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 20:38:03,802 - INFO - Use pytorch device_name: cpu
+2024-05-03 20:38:06,020 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:38:06,207 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:38:06,366 - INFO - Checking icons for qt designer app.
+2024-05-03 20:38:06,535 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 20:43:25,690 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 20:43:25,690 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 20:43:26,723 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 20:43:26,723 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 20:43:27,594 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 20:43:28,366 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 20:43:28,445 - INFO - Use pytorch device_name: cpu
+2024-05-03 20:43:30,235 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:43:30,686 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 20:43:30,853 - INFO - Checking icons for qt designer app.
+2024-05-03 20:43:31,002 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:12:32,258 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:12:32,266 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:12:33,459 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:12:33,459 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:12:33,784 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:12:34,772 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:12:34,909 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:12:36,980 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:12:37,483 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:12:37,634 - INFO - Checking icons for qt designer app.
+2024-05-03 23:12:37,816 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:13:36,047 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:13:36,060 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:13:36,740 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:13:36,740 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:13:37,045 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:13:37,814 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:13:37,908 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:13:39,793 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:13:40,269 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:13:40,412 - INFO - Checking icons for qt designer app.
+2024-05-03 23:13:40,569 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:18:43,765 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:18:43,771 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:18:44,943 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:18:44,946 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:18:45,268 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:18:46,556 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:18:46,650 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:18:48,670 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:18:48,840 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:18:49,009 - INFO - Checking icons for qt designer app.
+2024-05-03 23:18:49,175 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:22:17,279 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:22:17,282 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:22:18,487 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:22:18,488 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:22:18,793 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:22:20,055 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:22:20,155 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:22:21,945 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:22:22,467 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:22:22,631 - INFO - Checking icons for qt designer app.
+2024-05-03 23:22:22,806 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:23:46,236 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:23:46,242 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:23:46,890 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:23:46,891 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:23:47,203 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:23:48,039 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:23:48,129 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:23:50,207 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:23:50,387 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:23:50,588 - INFO - Checking icons for qt designer app.
+2024-05-03 23:23:50,795 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:27:19,942 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:27:19,942 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:27:20,591 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:27:20,591 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:27:20,911 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:27:22,224 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:27:22,302 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:27:24,496 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:27:24,694 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:27:24,876 - INFO - Checking icons for qt designer app.
+2024-05-03 23:27:25,059 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:29:38,774 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:29:38,774 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:29:39,944 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:29:39,944 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:29:40,260 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:29:41,552 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:29:41,620 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:29:43,321 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:29:43,790 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:29:43,957 - INFO - Checking icons for qt designer app.
+2024-05-03 23:29:44,124 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:37:16,017 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:37:16,017 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:37:17,241 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:37:17,252 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:37:17,601 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:37:18,371 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:37:18,448 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:37:20,235 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:37:20,703 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:37:20,903 - INFO - Checking icons for qt designer app.
+2024-05-03 23:37:21,078 - INFO - all icons have been checked and missing icons generated!
+2024-05-03 23:43:51,364 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-03 23:43:51,366 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-03 23:43:52,510 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-03 23:43:52,510 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-03 23:43:53,372 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-03 23:43:54,140 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-03 23:43:54,204 - INFO - Use pytorch device_name: cpu
+2024-05-03 23:43:56,361 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:43:56,540 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-03 23:43:56,706 - INFO - Checking icons for qt designer app.
+2024-05-03 23:43:56,906 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 10:33:47,524 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 10:33:47,524 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 10:33:48,816 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 10:33:48,848 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 10:33:49,221 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 10:33:51,063 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 10:33:51,253 - INFO - Use pytorch device_name: cpu
+2024-05-04 10:33:55,387 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:33:56,188 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:33:56,396 - INFO - Checking icons for qt designer app.
+2024-05-04 10:33:56,775 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 10:36:51,268 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 10:36:51,268 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 10:36:52,374 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 10:36:52,374 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 10:36:52,725 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 10:36:54,027 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 10:36:54,102 - INFO - Use pytorch device_name: cpu
+2024-05-04 10:36:55,884 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:36:56,510 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:36:56,693 - INFO - Checking icons for qt designer app.
+2024-05-04 10:36:56,868 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 10:38:00,475 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 10:38:00,483 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 10:38:01,086 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 10:38:01,086 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 10:38:01,433 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 10:38:02,358 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 10:38:02,427 - INFO - Use pytorch device_name: cpu
+2024-05-04 10:38:04,592 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:38:04,792 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 10:38:04,967 - INFO - Checking icons for qt designer app.
+2024-05-04 10:38:05,142 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 11:54:25,190 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 11:54:25,206 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 11:54:25,943 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 11:54:25,952 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 11:54:26,351 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 11:54:27,464 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 11:54:27,621 - INFO - Use pytorch device_name: cpu
+2024-05-04 11:54:30,457 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 11:54:31,057 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 11:54:31,221 - INFO - Checking icons for qt designer app.
+2024-05-04 11:54:31,405 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 11:55:56,990 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 11:55:56,990 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 11:55:57,696 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 11:55:57,696 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 11:55:58,198 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 11:55:59,127 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 11:55:59,190 - INFO - Use pytorch device_name: cpu
+2024-05-04 11:56:01,056 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 11:56:01,919 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 11:56:02,080 - INFO - Checking icons for qt designer app.
+2024-05-04 11:56:02,244 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:02:45,172 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:02:45,172 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:02:46,367 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:02:46,368 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:02:46,669 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:02:47,929 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:02:47,992 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:02:49,783 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:02:50,404 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:02:50,569 - INFO - Checking icons for qt designer app.
+2024-05-04 12:02:50,744 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:04:24,600 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:04:24,615 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:04:25,377 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:04:25,377 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:04:25,706 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:04:26,527 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:04:26,602 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:04:28,324 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:04:28,948 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:04:29,111 - INFO - Checking icons for qt designer app.
+2024-05-04 12:04:29,278 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:06:17,545 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:06:17,545 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:06:18,741 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:06:18,741 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:06:19,657 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:06:20,585 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:06:20,700 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:06:22,362 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:06:23,033 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:06:23,201 - INFO - Checking icons for qt designer app.
+2024-05-04 12:06:23,368 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:13:09,378 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:13:09,378 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:13:10,079 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:13:10,079 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:13:10,477 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:13:11,930 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:13:12,012 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:13:13,780 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:13:14,266 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:13:14,441 - INFO - Checking icons for qt designer app.
+2024-05-04 12:13:14,608 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:13:33,328 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:13:33,328 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:13:34,559 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:13:34,559 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:13:34,961 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:13:35,773 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:13:35,856 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:13:37,576 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:13:38,286 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:13:38,454 - INFO - Checking icons for qt designer app.
+2024-05-04 12:13:38,634 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 12:14:56,757 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 12:14:56,757 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 12:14:57,398 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 12:14:57,398 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 12:14:57,798 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 12:14:58,719 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 12:14:58,797 - INFO - Use pytorch device_name: cpu
+2024-05-04 12:15:00,988 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:15:01,139 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 12:15:01,298 - INFO - Checking icons for qt designer app.
+2024-05-04 12:15:01,456 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 15:31:36,906 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 15:31:36,909 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 15:31:37,521 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 15:31:37,521 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 15:31:37,849 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 15:31:38,780 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 15:31:38,860 - INFO - Use pytorch device_name: cpu
+2024-05-04 15:31:41,459 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:31:42,162 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:31:42,333 - INFO - Checking icons for qt designer app.
+2024-05-04 15:31:42,524 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 15:43:48,931 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 15:43:48,931 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 15:43:49,813 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 15:43:49,813 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 15:43:50,222 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 15:43:51,204 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 15:43:51,289 - INFO - Use pytorch device_name: cpu
+2024-05-04 15:43:53,551 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:43:54,191 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:43:54,344 - INFO - Checking icons for qt designer app.
+2024-05-04 15:43:54,511 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 15:44:46,952 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 15:44:46,952 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 15:44:47,743 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 15:44:47,743 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 15:44:48,581 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 15:44:49,391 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 15:44:49,461 - INFO - Use pytorch device_name: cpu
+2024-05-04 15:44:51,641 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:44:52,921 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:44:53,417 - INFO - Checking icons for qt designer app.
+2024-05-04 15:44:53,883 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 15:48:17,520 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 15:48:17,520 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 15:48:18,721 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 15:48:18,721 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 15:48:19,650 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 15:48:20,966 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 15:48:21,040 - INFO - Use pytorch device_name: cpu
+2024-05-04 15:48:23,232 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:48:23,370 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 15:48:23,520 - INFO - Checking icons for qt designer app.
+2024-05-04 15:48:23,660 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 16:24:19,432 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 16:24:19,432 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 16:24:20,769 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 16:24:20,771 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 16:24:21,077 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 16:24:22,403 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 16:24:22,485 - INFO - Use pytorch device_name: cpu
+2024-05-04 16:24:24,641 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:24:25,451 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:24:25,574 - INFO - Checking icons for qt designer app.
+2024-05-04 16:24:25,738 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 16:48:21,060 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 16:48:21,061 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 16:48:21,739 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 16:48:21,741 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 16:48:22,054 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 16:48:22,766 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 16:48:22,835 - INFO - Use pytorch device_name: cpu
+2024-05-04 16:48:24,852 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:48:25,542 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:48:25,702 - INFO - Checking icons for qt designer app.
+2024-05-04 16:48:25,861 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 16:51:54,493 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 16:51:54,493 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 16:51:55,225 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 16:51:55,227 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 16:51:55,543 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 16:51:56,269 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 16:51:56,351 - INFO - Use pytorch device_name: cpu
+2024-05-04 16:51:58,284 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:51:59,088 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 16:51:59,266 - INFO - Checking icons for qt designer app.
+2024-05-04 16:51:59,451 - INFO - all icons have been checked and missing icons generated!
+2024-05-04 18:06:51,362 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-04 18:06:51,362 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-04 18:06:52,582 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-04 18:06:52,582 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-04 18:06:53,410 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-04 18:06:54,297 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-04 18:06:54,427 - INFO - Use pytorch device_name: cpu
+2024-05-04 18:06:57,604 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 18:06:58,337 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-04 18:06:58,486 - INFO - Checking icons for qt designer app.
+2024-05-04 18:06:58,679 - INFO - all icons have been checked and missing icons generated!
+2024-05-06 07:59:13,107 - INFO - Load pretrained SentenceTransformer: VoVanPhuc/sup-SimCSE-VietNamese-phobert-base
+2024-05-06 07:59:13,107 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-06 07:59:14,398 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/modules.json HTTP/1.1" 404 0
+2024-05-06 07:59:14,416 - WARNING - No sentence-transformers model found with name VoVanPhuc/sup-SimCSE-VietNamese-phobert-base. Creating a new one with MEAN pooling.
+2024-05-06 07:59:15,228 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-06 07:59:17,362 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-06 07:59:17,457 - INFO - Use pytorch device_name: cpu
+2024-05-06 07:59:21,068 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 07:59:21,881 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 07:59:22,040 - INFO - Checking icons for qt designer app.
+2024-05-06 07:59:22,312 - INFO - all icons have been checked and missing icons generated!
+2024-05-06 08:11:46,854 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 08:11:47,482 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 08:11:47,690 - INFO - Checking icons for qt designer app.
+2024-05-06 08:11:47,906 - INFO - all icons have been checked and missing icons generated!
+2024-05-06 08:16:28,537 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 08:16:29,189 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-06 08:16:29,395 - INFO - Checking icons for qt designer app.
+2024-05-06 08:16:29,612 - INFO - all icons have been checked and missing icons generated!

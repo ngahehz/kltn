@@ -5,6 +5,9 @@ from database.dao_image import *
 from database.dao_tag import *
 from database.dao_file_tag import *
 from test import PDFReaderThread
+from PyQt6.QtCore import QThread, pyqtSignal
+from mainview_cp import *
+import PyPDF2
 
 class DocumentController(object):
     def __init__(self, file_model, notification_model, label_model, tag_model, file_tag_model):
@@ -62,11 +65,18 @@ class DocumentController(object):
         addFile(new_id, row[0], row[1], row[2], row[3], row[4])
         self.get_files()[new_id] = [new_id, row[0], row[1], row[2], row[3], row[4], None, None, None, None, 0]
         
-        self.thread = PDFReaderThread(new_id, row[1], row[4])
+        # self.thread = PDFReaderThread(new_id, row[1], row[4])
+        # self.thread.start()
+        # self.thread.finished.connect(lambda: print("Done"))
+        
+        self.thread = AddTagThead(new_id, row[1], self.add_file_tag_to_database)
         self.thread.start()
         self.thread.finished.connect(lambda: print("Done"))
-        # add_elastic_search(new_id, row[1], row[4])
+        # self.thread.getSth.connect(lambda result: self.add_file_tag_to_database(new_id, result))
+        # self.thread.getSth.connect(lambda result: self.get_id_tag_by_name(result))
+
         return new_id
+    
     
     def update_note_of_file(self, id, note):
         if id not in self.get_files():
@@ -118,7 +128,7 @@ class DocumentController(object):
                 return True
         return False
 
-    def get_label_name_by_id_file(self, id):
+    def get_label_name_by_id_file(self, id): # ai gọi m đây
         if id not in self.get_labels():
             return ""
         return self.get_labels()[id][1]
@@ -126,14 +136,19 @@ class DocumentController(object):
     def delete_file(self, id):
         deleteFile(id)
         del self.get_files()[id]
+        for key in self.get_files_tags(id):
+            deleteFileTag(key)
+            del self.get_files_tags()[key]
 
+    
+
+    ### LABEL ###
     def check_name_label_is_exist(self, name):
         for value in self.get_labels().values():
             if value[1] == name:
                 return True
         return False
     
-    ### LABEL ###
     def add_label_to_database(self, name):
         if self.check_name_label_is_exist(name):
             return False, 0
@@ -150,3 +165,107 @@ class DocumentController(object):
     def update_label_of_file(self, file_id, label_id):
         updateFileLabel(file_id, label_id)
         self.get_files()[file_id][6] = label_id
+
+    ### TAG ###
+    def delete_tag(self, id):
+        deleteTag(id)
+        del self.get_tags()[id]
+
+    def get_tag_id_by_name(self, name):
+        for value in self.get_tags().values():
+            if value[1] == name:
+                return value[0]
+        return None
+    
+    def check_name_tag_is_exist(self, name):
+        for value in self.get_tags().values():
+            if value[1] == name:
+                return True
+        return False
+    
+    def add_tag_to_database(self, name):
+        if self.check_name_tag_is_exist(name):
+            return False, 0
+        
+        if len(self.get_tags()) == 0:
+            new_id = 100
+        else:
+            new_id = list(self.get_tags().keys())[-1] + 1
+
+        addTag(new_id, name)
+        self.get_tags()[new_id] = [new_id,  name]
+        return True, new_id
+    
+    ### FILE TAG ###
+    def delete_file_tag(self, file_id, tag_id):
+        id = self.check_file_tag_is_exist(file_id, tag_id)[1]
+        deleteFileTag(id)
+        del self.get_files_tags()[id]
+
+    def check_file_tag_is_exist(self, file_id, tag_id):
+        for value in self.get_files_tags().values():
+            if value[1] == file_id and value[2] == tag_id:
+                return True, value[0]
+        return False, None
+    
+    def add_file_tag_to_database(self, file_id, tags_name):
+        print("205", tags_name)
+        if not isinstance(tags_name, str):
+        # if hasattr(tags_name, '__iter__'):
+            print("0", tags_name)
+            for tag_name in tags_name:
+                
+                if len(self.get_files_tags()) == 0:
+                    new_id = 1000
+                else:
+                    new_id = list(self.get_files_tags().keys())[-1] + 1
+                
+                tag_id = self.get_tag_id_by_name(tag_name[0])
+
+                addFileTag(new_id, file_id, tag_id)
+                self.get_files_tags()[new_id] = [new_id, file_id, tag_id]
+        else:
+            print("1", tags_name)
+            tag_id = self.get_tag_id_by_name(tags_name)
+            if self.check_file_tag_is_exist(file_id, tag_id)[0]:
+                    return False, None
+            
+            if len(self.get_files_tags()) == 0:
+                new_id = 1000
+            else:
+                new_id = list(self.get_files_tags().keys())[-1] + 1
+
+            addFileTag(new_id, file_id, tag_id)
+            self.get_files_tags()[new_id] = [new_id, file_id, tag_id]
+            return True, new_id
+
+
+
+class AddTagThead(QThread):
+    finished = pyqtSignal()
+
+    def __init__(self, file_id, path, add_file_tag_to_database):
+        super().__init__()
+        self.file_id = file_id
+        self.path = path
+        self.add_file_tag_to_database = add_file_tag_to_database
+
+    def run(self):
+        text = self.read_pdf()
+        lb = temp(text) #temp này là hàm trong mainview_cp.py
+        self.add_file_tag_to_database(self.file_id, lb)
+        self.finished.emit()
+
+    def read_pdf(self):
+        with open(self.path, 'rb') as file:
+            reader = PyPDF2.PdfReader(file)
+            
+            all_text = ""
+            for page_number in range(len(reader.pages)):
+                page = reader.pages[page_number]
+                all_text += page.extract_text()
+            
+        print("đọc  xong")
+        return all_text
+
+    
