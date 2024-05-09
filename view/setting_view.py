@@ -95,7 +95,7 @@ class Setting(QWidget):
                 self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-color:' + self.bg_img_path_theme + ';}')
             else :
                 self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + self.bg_img_path_theme + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-                # self.parent.document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+                # self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
         if btn_name == "reset_all_btn":
             self.load_state()
             self.controller.reset_setting()
@@ -212,7 +212,7 @@ class Setting(QWidget):
             self.bg_img_active_theme = self.controller.get_active_image()
             self.ui.comboBox.setCurrentIndex(self.bg_img_active_theme)
             self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + theme[1] + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-            self.parent.document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+            self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
             self.handle_image_click(self.bg_img_path_theme)
 
         self.logo_img_path_theme = theme[2]
@@ -230,8 +230,8 @@ class Setting(QWidget):
         # dưới này là đổi màu widgets
         self.parent.ui.header.setStyleSheet('#header{background-color: ' + self.widget_color_theme + ';}')
         self.parent.ui.left_menu_1.setStyleSheet('#left_menu_1{background-color: ' + self.widget_color_theme + ';border-top: 3px solid #ff79c6;}')
-        self.parent.document_widget.ui.noti_fr_btn.setStyleSheet('#noti_fr_btn{background-color: ' + self.widget_color_theme + ';border-radius: 10px;}')
-        # self.parent.document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2 .QPushButton{border: 2px solid ' + self.widget_color_theme + ';border-radius: 5px;color: #000000;}')
+        self.parent._document_widget.ui.noti_fr_btn.setStyleSheet('#noti_fr_btn{background-color: ' + self.widget_color_theme + ';border-radius: 10px;}')
+        # self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2 .QPushButton{border: 2px solid ' + self.widget_color_theme + ';border-radius: 5px;color: #000000;}')
         
         self.ui.pushButton_4.setIcon(QtGui.QIcon(self.logo_img_path_theme))
         self.ui.accent_color_btn.setStyleSheet('#accent_color_btn{background-color: ' + self.accent_color_theme + '}')
@@ -292,7 +292,7 @@ class Setting(QWidget):
     def change_background(self):
         self.bg_image, self.id_image_demo = self.controller.scale_image(self.id_image_demo, self.parent.ui.stackedWidget.width(), self.parent.ui.stackedWidget.height(), self.ui.comboBox.currentIndex())
         self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + self.bg_image + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-        self.parent.document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+        self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
         # self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.Stretch)
         # self.ui.widget_5.setStyleSheet('#widget_5{background-image: url(' + result + '); background-position: center; background-repeat: no-repeat;}')
 

@@ -6,6 +6,7 @@ from src.ui_noti_dropdown import DropdownNoti
 
 from view.document_view import Document
 from view.setting_view import Setting
+from view.summarization_view import Summarization
 
 from Custom_Widgets import *
 from Custom_Widgets.QAppSettings import QAppSettings
@@ -16,12 +17,14 @@ class MyWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.controller = controller
-        self.document_widget = Document(controller1, self)
-        self.setting_widget = Setting(controller2, self)
+        self._controller = controller
+        self._document_widget = Document(controller1, self)
+        self._setting_widget = Setting(controller2, self)
+        self._summarization = Summarization()
 
-        self.ui.horizontalLayout_14.addWidget(self.document_widget)
-        self.ui.verticalLayout_4.addWidget(self.setting_widget)
+        self.ui.horizontalLayout_14.addWidget(self._document_widget)
+        self.ui.verticalLayout_4.addWidget(self._setting_widget)
+        self.ui.horizontalLayout_4.addWidget(self._summarization)
 
         loadJsonStyle(
             self, self.ui, jsonFiles={"json-styles/dashboard_style.json"}  
@@ -29,7 +32,7 @@ class MyWindow(QMainWindow):
 
         QAppSettings.updateAppSettings(self)
         
-        loadJsonStyle(self.document_widget, self.document_widget.ui, jsonFiles={"json-styles/document_style.json"})
+        loadJsonStyle(self._document_widget, self._document_widget.ui, jsonFiles={"json-styles/document_style.json"})
 
         # settings = QSettings()
         # print("Current theme", settings.value("THEME"))
@@ -47,6 +50,7 @@ class MyWindow(QMainWindow):
         self.ui.menu_btn.clicked.connect(lambda: self.button_click())            ## Click menu button
         self.ui.all_btn.clicked.connect(lambda: self.button_click())             ## Click all button
         self.ui.tags_btn.clicked.connect(lambda: self.button_click())            ## Click tags button
+        self.ui.summarize_btn.clicked.connect(lambda: self.button_click())
         self.ui.settings_btn.clicked.connect(lambda: self.button_click())        ## Hiển thị trang cài đặt
 
         self.ui.top_logo.clicked.connect(lambda: self.button_click())
@@ -58,7 +62,7 @@ class MyWindow(QMainWindow):
 
         ################ HIỂN THỊ NOTI ################    
     def DropDownNoti(self, event):
-        popup_menu = DropdownNoti(self, self.controller.get_notifications())
+        popup_menu = DropdownNoti(self, self._controller.get_notifications())
         app_pos = self.ui.centralwidget.mapToGlobal(QtCore.QPoint(0, 0))
         frame_pos = self.ui.frame_5.mapToGlobal(self.ui.frame_5.rect().bottomRight())
         popup_pos = QtCore.QPoint(frame_pos.x() - popup_menu.sizeHint().width(), app_pos.y() + self.ui.header.height())
@@ -78,11 +82,11 @@ class MyWindow(QMainWindow):
 
         elif btnName == "all_btn":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
-            self.document_widget.load_table()
+            self._document_widget.load_table()
 
         elif btnName == "tags_btn":
-            if self.document_widget.ui.info_right.expanded:
-                self.document_widget.ui.info_right.collapseMenu()
+            if self._document_widget.ui.info_right.expanded:
+                self._document_widget.ui.info_right.collapseMenu()
             if self.ui.left_menu_2.expanded:
                 self.ui.left_menu_2.collapseMenu()
             else:
@@ -91,12 +95,15 @@ class MyWindow(QMainWindow):
         elif btnName == "settings_btn":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
 
+        elif btnName == "summarize_btn":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_4)
+
 
     ### LOAD ###
     def load(self):
         self.load_menu_labels()
 
-        self.noti_count = self.controller.check_read_status()
+        self.noti_count = self._controller.check_read_status()
         self.ui.label_2.setText(str(self.noti_count)) # hiển thị số thông báo chưa đọc
 
         height_menu = self.ui.menu_btn.sizeHint().height()
@@ -104,11 +111,11 @@ class MyWindow(QMainWindow):
 
     # ẩn menu phải
     def temp(self):
-        self.document_widget.ui.info_right.collapseMenu()
+        self._document_widget.ui.info_right.collapseMenu()
 
     ### TAG ĐỒ Ơ ###    
     def load_menu_labels(self):
-        for row in self.controller.get_labels().values():
+        for row in self._controller.get_labels().values():
             self.add_label_btn(row)
 
     def add_label_btn(self, row):
@@ -129,7 +136,7 @@ class MyWindow(QMainWindow):
     def click_sub_labels_btn (self, id):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
         self.ui.left_menu_2.collapseMenu()
-        self.document_widget.load_table(id)
+        self._document_widget.load_table(id)
 
     def showContextMenu(self, pos):
         button = self.sender()
@@ -154,8 +161,8 @@ class MyWindow(QMainWindow):
 
         reply = messageBox.exec_()
         if reply == QMessageBox.Yes:
-            self.controller.delete_label(btn.property("id"))
-            self.document_widget.delete_item_cbb(btn.text())
+            self._controller.delete_label(btn.property("id"))
+            self._document_widget.delete_item_cbb(btn.text())
             btn.deleteLater()
         else:
             return
@@ -163,10 +170,10 @@ class MyWindow(QMainWindow):
     def click_add_labels_btn(self):
         text, ok = QInputDialog.getText(self, "Enter Label Name", "Enter the new label name:")
         if ok:
-            result = self.controller.add_label_to_database(text)
+            result = self._controller.add_label_to_database(text)
             if result[0]:
-                self.add_label_btn(self.controller.get_labels()[result[1]])
-                self.document_widget.add_item_cbb(text)
+                self.add_label_btn(self._controller.get_labels()[result[1]])
+                self._document_widget.add_item_cbb(text)
             else:
                 QMessageBox.warning(self, "Notification", "Tên label này đã tồn tại")
             
@@ -175,11 +182,12 @@ class MyWindow(QMainWindow):
         self.ui.menu_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/menu.png"))
         self.ui.all_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/file.png"))
         self.ui.tags_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/tag.png"))
+        self.ui.summarize_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/minimize-2.png"))
         self.ui.settings_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/settings.png"))
         self.ui.mini_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/window_minimize.png"))
         self.ui.maxi_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/maximize.png"))
         self.ui.close_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/x.png"))
         self.ui.add_tag_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/plus.png"))
         
-        self.document_widget.ui.advanced_search.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/solid/sliders.png"))
-        self.document_widget.ui.noti_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/regular/bell.png"))
+        self._document_widget.ui.advanced_search.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/solid/sliders.png"))
+        self._document_widget.ui.noti_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/regular/bell.png"))

@@ -164,16 +164,6 @@
                 <string>Date &lt;-</string>
                </property>
               </item>
-              <item>
-               <property name="text">
-                <string>Size -&gt;</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Size &lt;-</string>
-               </property>
-              </item>
              </widget>
             </item>
            </layout>

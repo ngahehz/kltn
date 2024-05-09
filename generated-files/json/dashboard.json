@@ -29,6 +29,10 @@
       "icon": "../../TEMP/test2203/Qss/icons/icons/feather/tag.png"
     },
     {
+      "name": "summarize_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/minimize-2.png"
+    },
+    {
       "name": "settings_btn",
       "icon": "../../TEMP/test2203/Qss/icons/icons/feather/settings.png"
     },

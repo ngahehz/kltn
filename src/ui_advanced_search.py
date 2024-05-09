@@ -14,11 +14,9 @@ class Ui_Dialog(object):
         self.from_date_input.setDisplayFormat("yyyy-MM-dd")
         self.to_date_input.setDisplayFormat("yyyy-MM-dd")
         self.file_type_input = QComboBox()
-        self.file_type_input.addItem("")
+        self.file_type_input.addItem("All")
         self.file_type_input.addItem(".docx")
         self.file_type_input.addItem(".pdf")
-        self.file_type_input.addItem(".excel")
-        self.file_type_input.addItem(".jpg")
 
         layout = QFormLayout()
         layout.addRow(QLabel("Keyword:"), self.keyword_input)
@@ -35,6 +33,6 @@ class Ui_Dialog(object):
         Dialog.setLayout(layout)
 
         QtCore.QMetaObject.connectSlotsByName(Dialog)
-
+        
 
     

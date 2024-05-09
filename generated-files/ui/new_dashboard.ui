@@ -265,13 +265,13 @@
          </property>
          <property name="minimumSize">
           <size>
-           <width>150</width>
+           <width>175</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>150</width>
+           <width>175</width>
            <height>16777215</height>
           </size>
          </property>
@@ -295,7 +295,7 @@
            <widget class="QPushButton" name="menu_btn">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>175</width>
               <height>16777215</height>
              </size>
             </property>
@@ -324,7 +324,7 @@
            <widget class="QPushButton" name="all_btn">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>175</width>
               <height>16777215</height>
              </size>
             </property>
@@ -353,7 +353,7 @@
            <widget class="QPushButton" name="tags_btn">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>175</width>
               <height>16777215</height>
              </size>
             </property>
@@ -379,10 +379,39 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="summarize_btn">
+            <property name="maximumSize">
+             <size>
+              <width>175</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>  Summarize</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../TEMP/test2203/Qss/icons/_icons1304.qrc">
+              <normaloff>:/feather/icons/feather/minimize-2.png</normaloff>:/feather/icons/feather/minimize-2.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="settings_btn">
             <property name="maximumSize">
              <size>
-              <width>150</width>
+              <width>175</width>
               <height>16777215</height>
              </size>
             </property>
@@ -665,6 +694,25 @@
              <layout class="QHBoxLayout" name="horizontalLayout_14">
               <property name="spacing">
                <number>10</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_4">
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <property name="spacing">
+               <number>0</number>
               </property>
               <property name="leftMargin">
                <number>0</number>

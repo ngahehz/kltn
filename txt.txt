@@ -23,6 +23,8 @@ Installing collected packages: cryptography, pdfminer.six -- gỡ
 Installing collected packages: sniffio, h11, httpcore, anyio, httpx, python-telegram-bot
 Installing collected packages: pyaes, pyasn1, rsa, telethon
 Installing collected packages: summa
+Installing collected packages: PyMuPDFb, pymupdf
+Installing collected packages: pyjnius, py_vncorenlp
 
 
 

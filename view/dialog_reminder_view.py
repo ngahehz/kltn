@@ -20,6 +20,7 @@ class DialogView(QDialog):
         self.ui.setupUi(self)
         
         self.ui.dateTimeEdit.setDateTime(QDateTime(datetime.now()))
+        self.ui.dateTimeEdit.setDisplayFormat("yyyy-MM-dd")
         self.ui.textEdit.setText("")
         self.ui.ok_btn.clicked.connect(self.clickOK)
         self.ui.cancel_btn.clicked.connect(self.close)
@@ -46,7 +47,6 @@ class DialogView(QDialog):
         self.ui.textEdit.setFocus()
         self.ui.textEdit.selectAll()
 
-    # FILE (ID, FILE_NAME, FILE_PATH, UPLOAD_DATE, FILE_SIZE, FILE_TYPE, TAG_ID, NOTE, REMINDER_DATE, REMINDER_NOTE, PRIORITY)
     
 
 

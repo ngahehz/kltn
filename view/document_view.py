@@ -18,6 +18,7 @@ class Document(QWidget):
         self.controller = controller
         self.parent = parent
 
+        self.label = None
         self.ui.add_btn.clicked.connect(lambda: self.add_file())                ## Thêm file
         self.ui.tableWidget_2.itemClicked.connect(self.on_item_clicked)         ## Hiển thị thông tin file khi click vào file ở table
         self.ui.note_txt.textChanged.connect(self.note_text_change)             ## Cập nhật note của file
@@ -34,6 +35,13 @@ class Document(QWidget):
 
         self.ui.tableWidget_2.keyPressEvent = self.keyPressEvent                ## Sự kiện di chuyển lên xuống bằng bàn phím trên table
         self.ui.comboBox.currentIndexChanged.connect(self.sort_table)
+
+        self.ui.tableWidget_2.hideColumn(0)
+        self.ui.tableWidget_2.setColumnWidth(1, 200)  
+        self.ui.tableWidget_2.setColumnWidth(2, 50) 
+        self.ui.tableWidget_2.setColumnWidth(5, 60) 
+        self.ui.tableWidget_2.setColumnWidth(6, 60) 
+        self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
 
     def show_advanced_search_dialog(self):
         self.advanced_search_dialog = AdvancedDialogView(self)
@@ -196,12 +204,27 @@ class Document(QWidget):
                 self.on_item_clicked()
 
     ### LOAD TABLE ###
-    def load_table (self, labels = None):
+    def load_table (self, label = None, tag = None):
         # nếu có ấn button sub_label thì lấy file theo label
-        if labels:  
-            file_list = self.controller.get_files(labels)
+        if label:
+            self.label = label
+            file_list = self.controller.get_files(label).values()
+            if tag:
+                tag_id = self.controller.get_tag_id_by_name(tag)
+                self.tag = tag_id
+                file_id_list = [value[1] for value in self.controller.get_files_tags().values() if value[2] == tag_id]
+                file_list = [element for element in file_list if element[0] in file_id_list]
+        elif tag:
+            tag_id = self.controller.get_tag_id_by_name(tag)
+            self.tag = tag_id
+            file_id_list = [value[1] for value in self.controller.get_files_tags().values() if value[2] == tag_id]
+            file_list = []
+            for id in file_id_list:
+                file_list.append(self.controller.get_files()[int(id)])
         else:
-            file_list = self.controller.get_files()
+            self.label = None
+            self.tag = None
+            file_list = self.controller.get_files().values()
 
         # tạo danh sách để lưu trữ cbb tạp ra để sau này có thể thay đổi giá trị của cbb cho dễ
         self.comboBoxes = []    
@@ -209,7 +232,7 @@ class Document(QWidget):
         self.ui.tableWidget_2.clearContents()
         self.ui.tableWidget_2.setRowCount(0)
 
-        for i, row in enumerate(file_list.values(), start=0):
+        for i, row in enumerate(file_list, start=0):
             # kiểm tra xem có reminder nào sắp tới không
             if row[8] == datetime.now().strftime('%Y-%m-%d'):
                 self.controller.check_reminder_in_notification(row)
@@ -218,13 +241,6 @@ class Document(QWidget):
                 self.insert_row_table(row, 0)
             else:
                 self.insert_row_table(row, i)
-
-        self.ui.tableWidget_2.hideColumn(0)
-        self.ui.tableWidget_2.setColumnWidth(1, 200)  
-        self.ui.tableWidget_2.setColumnWidth(2, 50) 
-        self.ui.tableWidget_2.setColumnWidth(5, 60) 
-        self.ui.tableWidget_2.setColumnWidth(6, 60) 
-        self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
 
         for row in range(self.ui.tableWidget_2.rowCount()):
             for col in range(4):
@@ -432,13 +448,13 @@ class Document(QWidget):
         elif current_index == 2:  # Z - A
             self.ui.tableWidget_2.sortItems(1, Qt.SortOrder.DescendingOrder)
         elif current_index == 3:  # Date ->
-            self.ui.tableWidget_2.sortItems(1, Qt.SortOrder.AscendingOrder)
-        elif current_index == 4:  # Date <-
-            self.ui.tableWidget_2.sortItems(1, Qt.SortOrder.DescendingOrder)
-        elif current_index == 5:  # Size ->
             self.ui.tableWidget_2.sortItems(3, Qt.SortOrder.AscendingOrder)
-        elif current_index == 6:  # Size <-
+        elif current_index == 4:  # Date <-
             self.ui.tableWidget_2.sortItems(3, Qt.SortOrder.DescendingOrder)
+        # elif current_index == 5:  # Size ->
+        #     self.ui.tableWidget_2.sortItems(3, Qt.SortOrder.AscendingOrder)
+        # elif current_index == 6:  # Size <-
+        #     self.ui.tableWidget_2.sortItems(3, Qt.SortOrder.DescendingOrder)
 
     def load_cbb(self):
         self.ui.new_tag_cbb.addItem("(+)")
@@ -471,13 +487,13 @@ class Document(QWidget):
         else:
             for i in range(self.layout.count()):
                 self.layout.itemAt(i).widget().deleteLater()
-        print(self.row_focus[0])
+        # print(self.row_focus[0])
         self.frames = []
         id = self.row_focus[0]
         self.add_new_frame(self.controller.get_files_tags(id))
 
     def add_new_frame(self, list = None):
-        print("list",list)
+        # print("list",list)
         if list:
             # print("1")
             for i, tag in enumerate(list.values()):
@@ -520,6 +536,7 @@ class Document(QWidget):
                 } 
             """
             )
+        frame.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         layout = QGridLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(4)
@@ -531,6 +548,7 @@ class Document(QWidget):
                 background-color: transparent;
             """
             )
+        label.mousePressEvent = lambda event, text=text: self.load_table(tag = text)
         
         button = QPushButton()
         button.setStyleSheet(
