@@ -2,6 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6 import QtGui
 from PyQt6.QtWidgets import QFileDialog, QMessageBox, QColorDialog
 from PyQt6.QtGui import QPixmap
+from PyQt6.QtCore import QTimer
 
 from src.ui_page_setting import Ui_Form
 
@@ -45,6 +46,10 @@ class Setting(QWidget):
         self.load_demo_img()
         self.load_cbb()
 
+        self.width_wg = None
+        self.height_wg = None
+
+        
     def delete_img_click(self):
         if self.img_bg and self.id_image_demo == self.bg_img_path_theme:
             QMessageBox.warning(self, "Notification", "Không thể xóa ảnh đang sử dụng")
@@ -92,10 +97,10 @@ class Setting(QWidget):
             self.color_bg = False
             color_pattern = re.compile("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
             if color_pattern.match(self.bg_img_path_theme):
-                self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-color:' + self.bg_img_path_theme + ';}')
-            else :
-                self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + self.bg_img_path_theme + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-                # self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+                self.ui.widget_5.setStyleSheet('#widget_5{background-color: ' + self.bg_img_path_theme + '}')
+            else:
+                self.handle_image_click(self.bg_img_path_theme)
+
         if btn_name == "reset_all_btn":
             self.load_state()
             self.controller.reset_setting()
@@ -133,7 +138,7 @@ class Setting(QWidget):
             widget = self.widget_color_theme
 
         if self.img_bg:
-            self.change_bg()
+            self.change_background() 
             bg = self.get_id_from_path(self.bg_image), self.ui.comboBox.currentIndex() # 0, 1, 2 là stretch, cover, contain
         elif self.color_bg:
             bg = self.bg_color_path, None
@@ -277,20 +282,17 @@ class Setting(QWidget):
         self.ui.widget_5.setStyleSheet('#widget_5{background-image: url(' + result + '); background-position: center; background-repeat: no-repeat;}')
 
     ### ĐÓNG MENU ĐỂ THAY BG ###
-    def change_bg(self):
-        try:
-            print("Change BG")
-            if self.parent.ui.left_menu_1.isExpanded():
-                self.parent.ui.left_menu_1.collapseMenu()
-            if self.parent.ui.left_menu_2.isExpanded():
-                self.parent.ui.left_menu_2.collapseMenu()
-            self.change_background()
-        except Exception as e:
-            print(e)
+    # def change_bg(self):
+    #     try:
+    #         print("Change BG")
+    #         self.change_background()
+    #     except Exception as e:
+    #         print(e)
 
     ### THAY BG ###
     def change_background(self):
-        self.bg_image, self.id_image_demo = self.controller.scale_image(self.id_image_demo, self.parent.ui.stackedWidget.width(), self.parent.ui.stackedWidget.height(), self.ui.comboBox.currentIndex())
+        self.parent.ui.left_menu_1.collapseMenu()
+        self.bg_image, self.id_image_demo = self.controller.scale_image(self.id_image_demo, self.width_wg, self.height_wg, self.ui.comboBox.currentIndex())
         self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + self.bg_image + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
         self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
         # self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.Stretch)

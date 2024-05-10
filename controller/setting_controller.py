@@ -68,22 +68,32 @@ class SettingController(object):
             file.write(sub_css_content)
 
     def update_setting(self, bg, accent, widget, icon):
-        bg_temp = int(bg[0])
-        for values in self.get_images().values():
-            if values[2] != 3:
-                updateImage(values[0], 3)
-                self.get_images()[values[0]][2] = 3
-                break
-        if bg[1] is not None:
+        color_pattern = re.compile("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+        if not color_pattern.match(bg[0]):
+            bg_temp = int(bg[0])
+            for values in self.get_images().values():
+                if values[2] != 3:
+                    updateImage(values[0], 3)
+                    self.get_images()[values[0]][2] = 3
+                    break
             updateImage(bg_temp, bg[1])
             self.get_images()[bg_temp][2] = bg[1]
+            bg_temp = f"img/{bg[0]}_bg.png"
 
-        bg_temp = f"img/{bg[0]}_bg.png"
+        else:
+            bg_temp = bg[0]
+            for values in self.get_images().values():
+                if values[2] != 3:
+                    updateImage(values[0], 3)
+                    self.get_images()[values[0]][2] = 3
+                    break
+
         updateSetting(bg_temp, accent, widget, icon)
         updateStatus(1, 0)
         self.get_settings()[2] = [2, bg_temp, "img/resource/logo3.png", "img/resource/main3.png", accent, widget, icon, 1]
         self.get_settings()[1][7] = 0
         self.change_accent(accent)
+
 
     def delete_image(self, id):
         id = int(id)

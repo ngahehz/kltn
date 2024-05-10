@@ -115,7 +115,7 @@ class Document(QWidget):
     ################ HIỂN THỊ THÔNG TIN FILE KHI CLICK VÀO TABLE ################
     def on_item_clicked(self):
         self.ui.info_right.expandMenu()
-        if self.parent.ui.left_menu_2.expanded:
+        if self.parent.ui.left_menu_2.isExpanded():
             self.parent.ui.left_menu_2.collapseMenu()
         # self.index = self.ui.tableWidget_2.currentRow() # t laays casi file index nayf chi as ta
         id = self.ui.tableWidget_2.item(self.ui.tableWidget_2.currentRow(), 0).text()
@@ -417,7 +417,7 @@ class Document(QWidget):
         reply = messageBox.exec_()
         if reply == QMessageBox.Yes:
             self.controller.delete_file(id)
-            if self.ui.info_right.expanded:
+            if self.ui.info_right.isExpanded():
                 self.ui.info_right.collapseMenu()
             selected_row = self.ui.tableWidget_2.currentRow()
             if selected_row >= 0:

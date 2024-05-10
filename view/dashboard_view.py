@@ -59,6 +59,8 @@ class MyWindow(QMainWindow):
         self.ui.frame_5.mousePressEvent = self.DropDownNoti                     ## Hiển thị noti thông báo
         
         self.load()
+        self._setting_widget.width_wg = self.width() - self.ui.left_menu_1.width()
+        self._setting_widget.height_wg = self.height() - self.ui.header.height()
 
         ################ HIỂN THỊ NOTI ################    
     def DropDownNoti(self, event):
@@ -78,6 +80,10 @@ class MyWindow(QMainWindow):
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_1)
 
         elif btnName == "menu_btn":
+            # if self.ui.left_menu_1.isExpanded():
+            #     self.ui.left_menu_1.collapseMenu()
+            # else:
+            #     self.ui.left_menu_1.expandMenu()
             pass
 
         elif btnName == "all_btn":
@@ -85,9 +91,9 @@ class MyWindow(QMainWindow):
             self._document_widget.load_table()
 
         elif btnName == "tags_btn":
-            if self._document_widget.ui.info_right.expanded:
+            if self._document_widget.ui.info_right.isExpanded():
                 self._document_widget.ui.info_right.collapseMenu()
-            if self.ui.left_menu_2.expanded:
+            if self.ui.left_menu_2.isExpanded():
                 self.ui.left_menu_2.collapseMenu()
             else:
                 self.ui.left_menu_2.expandMenu()

@@ -52,7 +52,7 @@ class DropdownNoti(QWidget):
         custom_button.clicked.connect(lambda: self.customButtonClicked(row))
         # nếu mà chưa đọc thì mới cập nhật trạng thái 
         if row[4] == 0:
-            self.parent.controller.update_read_status_of_notification(row[0])
+            self.parent._controller.update_read_status_of_notification(row[0])
             self.parent.noti_count -= 1
             self.parent.ui.label_2.setText(str(self.parent.noti_count))
 
@@ -66,7 +66,7 @@ class DropdownNoti(QWidget):
             return
         
         self.parent.ui.stackedWidget.setCurrentWidget(self.parent.ui.page_3)
-        self.parent.documentation_widget.open_file_inside(QUrl.fromLocalFile(row[2]), os.path.basename(row[2]))
+        self.parent._document_widget.open_file_inside(QUrl.fromLocalFile(row[2]), os.path.basename(row[2]))
 
     def okButtonClicked(self, row):
         if not os.path.exists(row[2]):
