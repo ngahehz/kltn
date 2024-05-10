@@ -65,7 +65,7 @@
         background-color: #bd93f9;
     }
     &:pressed {
-        background-color: #ff79c6;
+        background-color: #ff79c5;
         color: rgb(255, 255, 255);
     }
     &:focus {
@@ -118,18 +118,20 @@
 ////////////////////////////////////////////////////
 
 ////////////////// (CONTENT) STACKED WIDGET ///////////////////////
-#page_3,
+
 #widget,
 #widget_7,
 #tabWidget_2,
 #widget_2,
 #info_right,
 #frame_9,
-#frame,
+#search_fr,
 #label,
 #file_tab,
 #info_fr .QLabel,
-#frame_15 {
+#frame_15,
+#new_tag_wg,
+#new_tag_fr {
     background-color: transparent;
 }
 
@@ -234,9 +236,9 @@ QLineEdit:focus {
 /// PAGE 2 ///
 #frame_14,
 #widget_6,
+#widget_4,
 #label_9,
 #frame_11,
-#widget_4,
 #label_7,
 #label_3,
 #main_img_fr,
@@ -251,14 +253,20 @@ QLineEdit:focus {
 #logo_icon_lb,
 #main_img_lb,
 #widget_color_lb,
-#pg2_container1
+#pg2_container1,
+#save_fr,
+#spinning_wg,
+#bot_reset_fr
 {
     background-color: transparent
 }
 
-#page_2{
+#page_2,
+#page_3,
+#page_4
+{
     // background-color: #dde6ff;
-    background-color: rgba(255, 255, 255, 0.219);
+    background-color: rgba(255, 255, 255, 0.626);
 }
 
 #frame_10{
@@ -276,7 +284,19 @@ QLineEdit:focus {
     margin-bottom: 14px;
     border: 2px dashed rgba(0, 0, 0, 0.881);
 }
+/// PAGE4 ///
+#sum_wg1,
+#sum_wg3,
+#sum_wg2,
+#label{
+    background-color: transparent;
+}
 
+#sum2_txt,
+#sum1_txt
+{
+    background-color: rgba(255, 255, 255, 0.626);
+}
 
 /// DROP DOWN NOTI ///
 

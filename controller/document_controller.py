@@ -6,8 +6,12 @@ from database.dao_tag import *
 from database.dao_file_tag import *
 from test import PDFReaderThread
 from PyQt6.QtCore import QThread, pyqtSignal
-from mainview_cp import *
+from controller.helper import predict_tag
+
 import PyPDF2
+import fitz
+import string
+
 
 class DocumentController(object):
     def __init__(self, file_model, notification_model, label_model, tag_model, file_tag_model):
@@ -209,7 +213,6 @@ class DocumentController(object):
         return False, None
     
     def add_file_tag_to_database(self, file_id, tags_name):
-        print("205", tags_name)
         if not isinstance(tags_name, str):
         # if hasattr(tags_name, '__iter__'):
             print("0", tags_name)
@@ -225,7 +228,6 @@ class DocumentController(object):
                 addFileTag(new_id, file_id, tag_id)
                 self.get_files_tags()[new_id] = [new_id, file_id, tag_id]
         else:
-            print("1", tags_name)
             tag_id = self.get_tag_id_by_name(tags_name)
             if self.check_file_tag_is_exist(file_id, tag_id)[0]:
                     return False, None
@@ -240,7 +242,6 @@ class DocumentController(object):
             return True, new_id
 
 
-
 class AddTagThead(QThread):
     finished = pyqtSignal()
 
@@ -252,7 +253,7 @@ class AddTagThead(QThread):
 
     def run(self):
         text = self.read_pdf()
-        lb = temp(text) #temp này là hàm trong mainview_cp.py
+        lb = predict_tag(text)
         self.add_file_tag_to_database(self.file_id, lb)
         self.finished.emit()
 
@@ -267,5 +268,28 @@ class AddTagThead(QThread):
             
         print("đọc  xong")
         return all_text
+    
+    def extract_text_from_pdf(self, file_path):
+        text = ''
+        with fitz.open(file_path) as doc:
+            for page in doc:
+                text += page.get_text()
+        return self.concatenate_sentences(text)
+    
+
+    def concatenate_sentences(self, sentence_list):
+        sentence_list = sentence_list.splitlines()
+        concatenated_sentence = ""
+
+        for i, sentence in enumerate(sentence_list):
+            if i == len(sentence_list) - 1:
+                concatenated_sentence += sentence
+            else:
+                if sentence[-1] in string.punctuation or sentence_list[i + 1][0] in string.punctuation:
+                    concatenated_sentence += sentence
+                else:
+                    concatenated_sentence += sentence + " "
+
+        return concatenated_sentence
 
     

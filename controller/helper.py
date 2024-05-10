@@ -1,26 +1,12 @@
-# import json
-
-# def get_icons_color():
-#     with open('json-styles/dashboard_style.json', 'r') as file:
-#         data = json.load(file)
-#     return data["QSettings"][0]["ThemeSettings"][0]["CustomTheme"][0]["Icons-color"]
 import numpy as np
 import pickle, os
 import regex as re
 import unicodedata
-import py_vncorenlp
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min
+from underthesea import word_tokenize
 
-# model_vncore_path = "setting"
-
-if not os.path.exists("models"):
-    py_vncorenlp.download_model()
-    
-if 'rdrsegmenter' not in globals():
-    # vncorenlp_path = model_vncore_path + '/VnCoreNLP.jar'
-    rdrsegmenter = py_vncorenlp.VnCoreNLP()
 
 MODEL_PATH = "D:/KLTN/QLCN/data/models"
 
@@ -36,7 +22,6 @@ bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['u', 'ù', 'ú', 'ủ', 'ũ', 'ụ', 'u'],
                   ['ư', 'ừ', 'ứ', 'ử', 'ữ', 'ự', 'uw'],
                   ['y', 'ỳ', 'ý', 'ỷ', 'ỹ', 'ỵ', 'y']]
-
 bang_ky_tu_dau = ['', 'f', 's', 'r', 'x', 'j']
 
 nguyen_am_to_ids = {}
@@ -45,7 +30,7 @@ for i in range(len(bang_nguyen_am)):
     for j in range(len(bang_nguyen_am[i]) - 1):
         nguyen_am_to_ids[bang_nguyen_am[i][j]] = (i, j)
 
-def standardize_vietnamese_accents_w(word):
+def chuan_hoa_dau_tu_tieng_viet(word):
     if not is_valid_vietnam_word(word):
         return word
 
@@ -117,36 +102,25 @@ def is_valid_vietnam_word(word):
     return True
 
 
-def standardize_vietnamese_accents(sentence):
+def chuan_hoa_dau_cau_tieng_viet(sentence):
     words = sentence.split()
     for index, word in enumerate(words):
-        # ^p{P}* : bắt đầu bằng 0 hoặc nhiều dấu câu
-        # [\p{L}.]*\p{L}+ : tiếp theo là 0 hoặc nhiều ký tự chữ hoặc dấu chấm, sau đó là ít nhất một ký tự chữ
-        # \p{P}*$ : kết thúc bằng 0 hoặc nhiều dấu câu
-        # r'\1/\2/\3' : bắt đầu bằng dấu câu, tiếp theo là từ đã chuẩn hóa, kết thúc bằng dấu câu (là 3 cái dòng trên á)
-        # p{X} là kiểu tìm các ký tự có tính chất X
-            # P : Punctuation (dấu câu), L : Letter (chữ cái) (check trang 5 word elastic)
         cw = re.sub(r'(^\p{P}*)([p{L}.]*\p{L}+)(\p{P}*$)', r'\1/\2/\3', word).split('/')
+        # print(cw)
         if len(cw) == 3:
-            cw[1] = standardize_vietnamese_accents_w(cw[1])
+            cw[1] = chuan_hoa_dau_tu_tieng_viet(cw[1])
         words[index] = ''.join(cw)
     return ' '.join(words)
 
 def text_preprocess(document):
-    document = document.lower() # phải đưa về chữ thường trước cái tokenization
-    document = re.sub(r'https?://\S+', '', document) # bỏ link
-    document = re.sub(r'\[\d+(?:,\s?\d+)*\]', '', document) # bỏ số trong ngoặc vuông
-    # chuẩn hóa unicode
+    document = document.lower()    
+    document = re.sub(r'https?://\S+', '', document) 
+    document = re.sub(r'\[\d+(?:,\s?\d+)*\]', '', document)
     document = unicodedata.normalize('NFC', document)
-    # tách từ
-    document = ' '.join(rdrsegmenter.word_segment(document))
-    # bỏ stopword
-    document = remove_stopwords(document) # phân loại thì bỏ còn không thì từ từ t tính sau
-    # # chuẩn hóa cách gõ dấu tiếng Việt # bỏ đi tại vì cái vncore nó có chuẩn hóa theo kiểu của nó rồi
-    # document = standardize_vietnamese_accents(document)
-    # xóa các ký tự không cần thiết
+    document = chuan_hoa_dau_cau_tieng_viet(document)
+    document = word_tokenize(document, format="text")
+    document = remove_stopwords(document)
     document = re.sub(r'[^\s\wáàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệóòỏõọôốồổỗộơớờởỡợíìỉĩịúùủũụưứừửữựýỳỷỹỵđ_]',' ',document)
-    # xóa khoảng trắng thừa
     document = re.sub(r'\s+', ' ', document).strip()
     return document
 
@@ -164,10 +138,9 @@ def remove_stopwords(line):
 
 
 label_encoder = pickle.load(open(os.path.join(MODEL_PATH,"label_encoder.pkl"), 'rb'))
-model1 = pickle.load(open(os.path.join(MODEL_PATH,"svm.pkl"), 'rb'))
+
 model2 = pickle.load(open(os.path.join(MODEL_PATH,"naive_bayes.pkl"), 'rb'))
 model3 = pickle.load(open(os.path.join(MODEL_PATH,"linear_classifier.pkl"), 'rb'))
-
 
 def predict_tag (text):
     text = text_preprocess(text)
@@ -191,7 +164,6 @@ def predict_tag (text):
         return label_encoder.inverse_transform([top_labels[1]])
 
 
-
 def summarizer(text):
     contents = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)
     vectorizer = TfidfVectorizer()
@@ -213,11 +185,6 @@ def summarizer(text):
     summary = " ".join([contents[closest[idx]] for idx in ordering])
 
     return summary
-
-
-
-
-
 
 
 

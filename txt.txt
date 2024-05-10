@@ -24,8 +24,9 @@ Installing collected packages: sniffio, h11, httpcore, anyio, httpx, python-tele
 Installing collected packages: pyaes, pyasn1, rsa, telethon
 Installing collected packages: summa
 Installing collected packages: PyMuPDFb, pymupdf
-Installing collected packages: pyjnius, py_vncorenlp
+Installing collected packages: pyjnius, py_vncorenlp - GỠ
 
+install pykenrel gì gì đó :)
 
 
 

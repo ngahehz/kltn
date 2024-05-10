@@ -280,10 +280,10 @@ class Setting(QWidget):
     def change_bg(self):
         try:
             print("Change BG")
-            self.parent.ui.left_menu_1.collapseMenu()
-            self.parent.ui.left_menu_2.collapseMenu()
-            while self.parent.ui.left_menu_1.isExpanded() or self.parent.ui.left_menu_2.isExpanded():
-                pass
+            if self.parent.ui.left_menu_1.isExpanded():
+                self.parent.ui.left_menu_1.collapseMenu()
+            if self.parent.ui.left_menu_2.isExpanded():
+                self.parent.ui.left_menu_2.collapseMenu()
             self.change_background()
         except Exception as e:
             print(e)
