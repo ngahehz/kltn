@@ -1,32 +1,48 @@
-from sentence_transformers import SentenceTransformer
-import time
-
-# model_embedding = SentenceTransformer('VoVanPhuc/sup-SimCSE-VietNamese-phobert-base')
 
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from underthesea import word_tokenize
+from transformers import AutoModel, AutoTokenizer
+import torch, time
 
-# from pyvi.ViTokenizer import tokenize
 import pandas as pd
 
 CERT_FINGERPRINT = "a621638c3d236dffb6be182fe2dac0dbd97d0ea27e823c6269beb3d3d69f93d4"
 ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
 
-# index_name = "demo_simcse"
-# path_index = "test_search/config/index.json"
-# path_data = "test_search/data/data_title.csv"
-# batch_size = 128
+PhobertTokenizer = AutoTokenizer.from_pretrained("VoVanPhuc/sup-SimCSE-VietNamese-phobert-base")
+model_embedding = AutoModel.from_pretrained("VoVanPhuc/sup-SimCSE-VietNamese-phobert-base")
 
-# client = Elasticsearch(
-#     "https://localhost:9200",
-#     ssl_assert_fingerprint=CERT_FINGERPRINT,
-#     basic_auth=("elastic", ELASTIC_PASSWORD)
-# )
+index_name = "demo_simcse"
+path_index = "test_search/config/index.json"
+path_data = "test_search/data/data_title.csv"
+batch_size = 128
+
+client = Elasticsearch(
+    "https://localhost:9200",
+    ssl_assert_fingerprint=CERT_FINGERPRINT,
+    basic_auth=("elastic", ELASTIC_PASSWORD)
+)
+
+
+def embed_text(batch_text):
+    encoded_input = PhobertTokenizer(batch_text, padding=True, truncation=True, return_tensors='pt')
+    encoded_input = {k: v.to(model_embedding.device) for k, v in encoded_input.items()}
+    with torch.no_grad():
+        model_output = model_embedding(**encoded_input)
+    
+    input_mask_expanded = encoded_input['attention_mask'].unsqueeze(-1).expand(model_output.last_hidden_state.size()).float()
+    sum_embeddings = torch.sum(model_output.last_hidden_state * input_mask_expanded, 1)
+    sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+    mean_pooled_embeddings = sum_embeddings / sum_mask
+    
+    return [vector.tolist() for vector in mean_pooled_embeddings]
+
 
 # def embed_text(batch_text):
 #     batch_embedding = model_embedding.encode(batch_text)
 #     return [vector.tolist() for vector in batch_embedding]
+
 
 # def index_batch(docs):
 #     requests = []
@@ -69,17 +85,6 @@ ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
 # print("Done indexing.")
 
 
-model_embedding = SentenceTransformer('VoVanPhuc/sup-SimCSE-VietNamese-phobert-base')
-
-client = Elasticsearch(
-    "https://localhost:9200",
-    ssl_assert_fingerprint=CERT_FINGERPRINT,
-    basic_auth=("elastic", ELASTIC_PASSWORD)
-)
-
-def embed_text(text):
-    text_embedding = model_embedding.encode(text)
-    return text_embedding.tolist()
 
 def search(query, type_ranker):
     if type_ranker == 'SimCSE':
@@ -103,8 +108,8 @@ def search(query, type_ranker):
     else:
         script_query = {
             "match": {
-              "content": {
-            #   "title": {
+            #   "content": {
+              "title": {
                 "query": query,
                 "fuzziness": "AUTO"
               }
@@ -113,14 +118,14 @@ def search(query, type_ranker):
 
 
     response = client.search(
-        # index='demo_simcse',
-        index='test_tina1',
+        index='demo_simcse',
+        # index='test_tina1',
         body={
             "size": 10,
             "query": script_query,
             "_source": {
-                # "includes": ["id", "title"]
-                "includes": ["id", "content"]
+                "includes": ["id", "title"]
+                # "includes": ["id", "content"]
 
             },
         },
@@ -130,8 +135,9 @@ def search(query, type_ranker):
     result = []
     print(response)
     for hit in response["hits"]["hits"]:
-        # result.append(hit["_source"]['title'])
-        result.append(hit["_source"]['id'])
+        result.append(hit["_source"]['title'])
+        # result.append(hit["_source"]['id'])
     return result
 
-print(search('dạy đời', 'SimCSE'))
+print(search('tình yêu tuổi học trò', 'SimCSE'))
+print(search('tình yêu tuổi học trò', ''))

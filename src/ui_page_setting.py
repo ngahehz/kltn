@@ -38,7 +38,6 @@ class Ui_Form(object):
         self.verticalLayout_8.setSpacing(5)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.bg_img_fr = QtWidgets.QFrame(parent=self.frame_11)
-        self.bg_img_fr.setMinimumSize(QtCore.QSize(0, 0))
         self.bg_img_fr.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.bg_img_fr.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.bg_img_fr.setObjectName("bg_img_fr")
@@ -60,34 +59,7 @@ class Ui_Form(object):
         font.setFamily("Arial")
         font.setPointSize(13)
         self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("QComboBox{\n"
-"    background-color: rgb(213, 224, 255);\n"
-"    border-radius: 5px;\n"
-"    border: 1px solid rgb(33, 37, 43);\n"
-"}\n"
-"QComboBox:hover{\n"
-"    border: 1px solid rgb(64, 71, 88);\n"
-"}\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 25px; \n"
-"    border-left-width: 3px;\n"
-"    border-left-color: rgba(39, 44, 54, 150);\n"
-"    border-left-style: solid;\n"
-"    border-top-right-radius: 3px;\n"
-"    border-bottom-right-radius: 3px;    \n"
-"    // background-image: url(:/icons/images/icons/cil-arrow-bottom.png);\n"
-"    background-position: center;\n"
-"    background-repeat: no-reperat;\n"
-" }\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    color: rgb(121, 175, 255);    \n"
-"    background-color: rgb(255, 255, 255);\n"
-"    padding: 10px;\n"
-"    selection-background-color: rgb(22, 97, 248);\n"
-"}")
+        self.comboBox.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
@@ -244,6 +216,11 @@ class Ui_Form(object):
         spacerItem2 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem2)
         self.icon_color_cbb = QtWidgets.QComboBox(parent=self.icon_color_fr)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(13)
+        self.icon_color_cbb.setFont(font)
+        self.icon_color_cbb.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         self.icon_color_cbb.setObjectName("icon_color_cbb")
         self.horizontalLayout_2.addWidget(self.icon_color_cbb)
         self.push_icon_color_back_btn = QtWidgets.QPushButton(parent=self.icon_color_fr)
@@ -310,8 +287,8 @@ class Ui_Form(object):
         self.verticalLayout_10.setSpacing(10)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.widget_5 = QtWidgets.QWidget(parent=self.frame_10)
-        self.widget_5.setMinimumSize(QtCore.QSize(372, 240))
-        self.widget_5.setMaximumSize(QtCore.QSize(372, 240))
+        self.widget_5.setMinimumSize(QtCore.QSize(390, 240))
+        self.widget_5.setMaximumSize(QtCore.QSize(390, 240))
         self.widget_5.setAcceptDrops(True)
         self.widget_5.setObjectName("widget_5")
         self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.widget_5)
@@ -375,7 +352,7 @@ class Ui_Form(object):
         self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 740, 80))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 400, 80))
         self.scrollAreaWidgetContents.setMinimumSize(QtCore.QSize(300, 0))
         self.scrollAreaWidgetContents.setMaximumSize(QtCore.QSize(16777215, 100))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")

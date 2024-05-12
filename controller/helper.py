@@ -106,14 +106,13 @@ def chuan_hoa_dau_cau_tieng_viet(sentence):
     words = sentence.split()
     for index, word in enumerate(words):
         cw = re.sub(r'(^\p{P}*)([p{L}.]*\p{L}+)(\p{P}*$)', r'\1/\2/\3', word).split('/')
-        # print(cw)
         if len(cw) == 3:
             cw[1] = chuan_hoa_dau_tu_tieng_viet(cw[1])
         words[index] = ''.join(cw)
     return ' '.join(words)
 
 def text_preprocess(document):
-    document = document.lower()    
+    document = document.lower()
     document = re.sub(r'https?://\S+', '', document) 
     document = re.sub(r'\[\d+(?:,\s?\d+)*\]', '', document)
     document = unicodedata.normalize('NFC', document)

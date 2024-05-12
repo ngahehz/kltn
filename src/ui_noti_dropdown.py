@@ -30,7 +30,7 @@ class DropdownNoti(QWidget):
             # label.mousePressEvent = self.onAction1Clicked(label.objectName())
             label.mousePressEvent = lambda event, row=row: self.onAction1Clicked(row)
             if row[4] == 0:
-                label.setStyleSheet("background-color: yellow;")
+                label.setStyleSheet("background-color: #ffff8d;")
             layout.insertWidget(0, label)
             # layout.addWidget(label)
             

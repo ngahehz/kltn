@@ -4,6 +4,7 @@ from underthesea import word_tokenize
 from PyQt6.QtCore import QThread, pyqtSignal
 import PyPDF2
 import torch
+import regex as re
 from transformers import AutoModel, AutoTokenizer
 
 class PDFReaderThread(QThread):
@@ -21,7 +22,7 @@ class PDFReaderThread(QThread):
         CERT_FINGERPRINT = "a621638c3d236dffb6be182fe2dac0dbd97d0ea27e823c6269beb3d3d69f93d4"
         ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
 
-        self.index_name = "test_tina1"
+        self.index_name = "tina1"
         self.path_index = "test_search/config/index.json"
 
         self.client = Elasticsearch(
@@ -50,13 +51,15 @@ class PDFReaderThread(QThread):
                     page = reader.pages[page_number]
                     content += page.extract_text()
 
-        title = word_tokenize(content, format="text")
-        title_vector = self.embed_text(title)
+        content = content.lower()
+        content = re.sub(r'https?://\S+', '', content) 
+        content = re.sub(r'\[\d+(?:,\s?\d+)*\]', '', content)
+        content = word_tokenize(content, format="text")
+        content_vector = self.embed_text(content)
 
         doc = {
             'id': id,
-            'content': content,
-            "title_vector" : title_vector,
+            "content_vector" : content_vector,
         }
 
         response = self.client.index(index=self.index_name, document=doc)
@@ -75,13 +78,21 @@ class PDFReaderThread(QThread):
         else:
             print(f"The index {self.index_name} already exists. Skipping creation.")
 
-    def embed_text(self, text):
-        # sentences = [tokenize(sentence) for sentence in sentences]
-        inputs = self.PhobertTokenizer(text, padding=True, truncation=True, return_tensors="pt")
-        with torch.no_grad():
-            embeddings = self.model_embedding(**inputs, output_hidden_states=True, return_dict=True).pooler_output
+    def embed_text(self, batch_text):
+        if isinstance(batch_text, str):
+            batch_text = [batch_text]
 
-        return embeddings.tolist()
+        encoded_input = self.PhobertTokenizer(batch_text, padding=True, truncation=True, return_tensors='pt')
+        encoded_input = {k: v.to(self.model_embedding.device) for k, v in encoded_input.items()}
+        with torch.no_grad():
+            model_output = self.model_embedding(**encoded_input)
+        
+        input_mask_expanded = encoded_input['attention_mask'].unsqueeze(-1).expand(model_output.last_hidden_state.size()).float()
+        sum_embeddings = torch.sum(model_output.last_hidden_state * input_mask_expanded, 1)
+        sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+        mean_pooled_embeddings = sum_embeddings / sum_mask
+        
+        return [vector.tolist() for vector in mean_pooled_embeddings]
 
 
         

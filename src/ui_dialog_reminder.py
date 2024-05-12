@@ -7,11 +7,15 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import Qt
 
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
+        Dialog.setWindowTitle("Thêm nhắc nhở")
+        Dialog.setWindowFlags(Dialog.windowFlags() | Qt.Dialog | Qt.CustomizeWindowHint)
+        Dialog.setWindowFlags(Dialog.windowFlags() & ~Qt.WindowSystemMenuHint)
         Dialog.resize(264, 169)
         self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout.setSpacing(12)
@@ -39,12 +43,11 @@ class Ui_Dialog(object):
         self.horizontalLayout.addWidget(self.ok_btn)
         self.verticalLayout.addWidget(self.frame)
 
-        self.retranslateUi(Dialog)
+        self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.dateTimeEdit.setDisplayFormat(_translate("Dialog", "dd-MMM-yy"))
         self.cancel_btn.setText(_translate("Dialog", "Cancel"))
         self.ok_btn.setText(_translate("Dialog", "Ok"))

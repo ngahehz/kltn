@@ -8,13 +8,6 @@
     background-color: #6272a4;
 }
 
-#frame,
-#frame_4,
-#top_logo {
-    background-color: transparent;
-
-}
-
 #frame_4 .QPushButton {
     background-color: rgba(255, 255, 255, 0);
     border: none;
@@ -38,13 +31,6 @@
     color: rgb(234, 108, 108);
     font-weight: 900;
 }
-
-// #frame_5 {
-//     background-color: transparent;
-//     background-image: url("C:/Users/Hi/Desktop/bell_resize.png");
-//     background-position: center;
-//     background-repeat: no-repeat;
-// }
 
 ////////////////// LEFT MENU ///////////////////////
 #left_menu_1 {
@@ -77,24 +63,11 @@
 
 #widget_3{
     border-top: 3px solid #99a5cb;
-    // background-color: transparent;
 }
 
-#scrollAreaWidgetContents_2{
-    background-color: transparent;
-
-}
-
-#scrollArea{
-    background-color: transparent;
-}
 #left_menu_2 {
     background-color: #495474;
     color: #f8f8f2;
-}
-
-#left_menu_2 .QFrame {
-    background-color: transparent;
 }
 
 #left_menu_2 .QPushButton {
@@ -115,36 +88,12 @@
         color: rgb(255, 255, 255);
     }
 }
-////////////////////////////////////////////////////
+
 
 ////////////////// (CONTENT) STACKED WIDGET ///////////////////////
-
-#widget,
-#widget_7,
-#tabWidget_2,
-#widget_2,
-#info_right,
-#frame_9,
-#search_fr,
-#label,
-#file_tab,
-#info_fr .QLabel,
-#frame_15,
-#new_tag_wg,
-#new_tag_fr {
-    background-color: transparent;
-}
-
 #stackedWidget {
     border-top: 3px solid #ff79c6;
-
 }
-/// PAGE 1 - DASHBOARD ///
-// #frame_2{
-    // background-image: url("C:/Users/Hi/Desktop/TINA.png");
-    // background-position: center;
-    // background-repeat: no-repeat;
-// }
 
 
 /// PAGE 3 - INFO_RIGHT ///
@@ -169,15 +118,12 @@
     padding-bottom: 8px;
 }
 
-/// PAGE 3 - TABWIDGET_2 ///
-
-// #add_btn {
-//     background-color: #546391;
-// }
+/// PAGE 3 - DOCUMENT ///
 
 #tableWidget_2 {
     border: 1px solid rgba(255, 255, 255, 30);
-    background-color: rgba(255, 255, 255, 0.626);
+    background-color: rgba(221, 230, 255, 0.882);
+    // background-color: rgba(255, 255, 255, 0.626);
 }
 
 QHeaderView::section{
@@ -210,17 +156,18 @@ QHeaderView::section:vertical
 	border: 2px solid #ff79c6;
 }
 
-QPushButton {
-	border: 2px solid #6272a4;
+QPushButton
+{
+    background-color: #ffffff;
+	border: 1px solid #6272a4;
 	border-radius: 5px;	
     color: #000000;
 }
 
-
 QLineEdit {
-	background-color: #b0c0ef;
+	background-color: #ffffff;
 	border-radius: 5px;
-	border: 2px solid #6272a4;
+	border: 2px solid #ffc9e8;
 	padding-left: 10px;
     color: #f8f8f2;
 }
@@ -228,39 +175,17 @@ QLineEdit:hover {
 	border: 2px solid rgb(64, 71, 88);
 }
 QLineEdit:focus {
-	border: 2px solid #ff79c6;
+	border: 2px solid #ffc9e8;
+}
+// #search_input:selected {
+//     background-color: #ffc9e8;
+// }
+QDateTimeEdit{
+    background-color: #ffffff;
 }
 
 
-
-/// PAGE 2 ///
-#frame_14,
-#widget_6,
-#widget_4,
-#label_9,
-#frame_11,
-#label_7,
-#label_3,
-#main_img_fr,
-#widget_color_fr,
-#logo_icon_fr,
-#icon_color_fr,
-#bg_img_fr,
-#accent_color_fr,
-#accent_color_lb,
-#bg_img_lb,
-#icon_color_lb,
-#logo_icon_lb,
-#main_img_lb,
-#widget_color_lb,
-#pg2_container1,
-#save_fr,
-#spinning_wg,
-#bot_reset_fr
-{
-    background-color: transparent
-}
-
+/// PAGE 2 SETTING ///
 #page_2,
 #page_3,
 #page_4
@@ -284,14 +209,7 @@ QLineEdit:focus {
     margin-bottom: 14px;
     border: 2px dashed rgba(0, 0, 0, 0.881);
 }
-/// PAGE4 ///
-#sum_wg1,
-#sum_wg3,
-#sum_wg2,
-#label{
-    background-color: transparent;
-}
-
+/// PAGE4 SUMMARY ///
 #sum2_txt,
 #sum1_txt
 {
@@ -314,6 +232,65 @@ QLabel[objectName^="dropdownItem"] {
         color: $COLOR_BACKGROUND_4;
     }
 }
+
+/// TRANSPARENT ///
+
+// HEADER
+#frame,
+#frame_4,
+#top_logo,
+// PAGE 4
+#sum_wg1,
+#sum_wg3,
+#sum_wg2,
+#label,
+// PAGE 2
+#frame_14,
+#widget_6,
+#widget_4,
+#label_9,
+#frame_11,
+#label_7,
+#label_3,
+#main_img_fr,
+#widget_color_fr,
+#logo_icon_fr,
+#icon_color_fr,
+#bg_img_fr,
+#accent_color_fr,
+#accent_color_lb,
+#bg_img_lb,
+#icon_color_lb,
+#logo_icon_lb,
+#main_img_lb,
+#widget_color_lb,
+#pg2_container1,
+#save_fr,
+#spinning_wg,
+#bot_reset_fr,
+// STACKED WIDGET
+#widget,
+#widget_7,
+#tabWidget_2,
+#widget_2,
+#info_right,
+#frame_9,
+#search_fr,
+#label,
+#file_tab,
+#info_fr .QLabel,
+#frame_15,
+#new_tag_wg,
+#new_tag_fr,
+// LEFT MENU
+#scrollArea,
+#left_menu_2 .QFrame,
+#scrollAreaWidgetContents_2
+{
+    background-color: transparent;
+}
+
+/// BUTTON ///
 
 
 //             //===================================================//

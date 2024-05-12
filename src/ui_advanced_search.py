@@ -1,12 +1,17 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QFormLayout, QLabel, QLineEdit, QDateTimeEdit, QComboBox, QPushButton
+from PyQt6.QtCore import Qt
 
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(453, 334)
+        Dialog.setWindowTitle("Tìm kiếm nâng cao")
+        Dialog.setWindowFlags(Dialog.windowFlags() | Qt.Dialog | Qt.CustomizeWindowHint)
+        Dialog.setWindowFlags(Dialog.windowFlags() & ~Qt.WindowSystemMenuHint)
 
         self.keyword_input = QLineEdit()
 

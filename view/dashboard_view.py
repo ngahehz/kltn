@@ -60,7 +60,7 @@ class MyWindow(QMainWindow):
         
         self.load()
         self._setting_widget.width_wg = self.width() - self.ui.left_menu_1.width()
-        self._setting_widget.height_wg = self.height() - self.ui.header.height()
+        self._setting_widget.height_wg = self.height() - self.ui.header.height() + 4 # 4 là khoảng cách giữa header và widget
 
         ################ HIỂN THỊ NOTI ################    
     def DropDownNoti(self, event):
@@ -80,10 +80,6 @@ class MyWindow(QMainWindow):
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_1)
 
         elif btnName == "menu_btn":
-            # if self.ui.left_menu_1.isExpanded():
-            #     self.ui.left_menu_1.collapseMenu()
-            # else:
-            #     self.ui.left_menu_1.expandMenu()
             pass
 
         elif btnName == "all_btn":
@@ -195,5 +191,5 @@ class MyWindow(QMainWindow):
         self.ui.close_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/x.png"))
         self.ui.add_tag_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/plus.png"))
         
-        self._document_widget.ui.advanced_search.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/solid/sliders.png"))
+        self._document_widget.ui.advanced_search.setIcon(QtGui.QIcon("Qss/icons/000000/font_awesome/solid/sliders.png"))
         self._document_widget.ui.noti_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/regular/bell.png"))

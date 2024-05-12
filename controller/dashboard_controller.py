@@ -13,16 +13,6 @@ class MainController(object):
         self._setting_model = setting_model
 
         self.load()
-
-        # theme = self.check_theme()
-        # self.logo = self.get_settings()[theme][2]
-        # self.db_img = self.get_settings()[theme][3]
-        # self.wg_color = self.get_settings()[theme][5]
-        # self.bg_img = self.get_settings()[theme][1]
-
-        # color_pattern = re.compile("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
-        # if color_pattern.match(self.bg_img):
-        #     self.bg_img = None
         
 
     def load(self):

@@ -753,7 +753,7 @@ https://doc.qt.io/qt-5/stylesheet-examples.html#customizing-specific-widgets
 
 --------------------------------------------------------------------------- */
 QTextEdit {
-    background-color: $COLOR_BACKGROUND_1;
+    background-color: #ffffff;
     color: $COLOR_TEXT_1;
     border-radius: $SIZE_BORDER_RADIUS;
     border: $BORDER_2;
@@ -1306,6 +1306,7 @@ QComboBox {
     border: $BORDER_2;
     border-radius: $SIZE_BORDER_RADIUS;
     selection-background-color: $COLOR_ACCENT_2;
+    background-color: #ffffff;
     padding-left: 4px;
     padding-right: 4px;
     /* padding-right = 36; 4 + 16*2 See scrollbar size */
@@ -1396,14 +1397,14 @@ QComboBox {
     }
 
     &::down-arrow {
-        image: url($PATH_RESOURCES+'feather/arrow_down.png');
+        image: url('theme-icons:000000/feather/arrow_down.png');
         height: 8px;
         width: 8px;
 
         &:on,
         &:hover,
         &:focus {
-            image: url($PATH_RESOURCES+'feather/arrow_down.png');
+            image: url('theme-icons:000000/feather/arrow_down.png');
         }
     }
 }
@@ -2254,7 +2255,7 @@ QSplitter {
 /* QDateEdit, QDateTimeEdit -----------------------------------------------
 
 --------------------------------------------------------------------------- */
-// QDateEdit, QDateTimeEdit {
+QDateEdit, QDateTimeEdit {
 //     selection-background-color: $COLOR_ACCENT_2;
 //     border-style: solid;
 //     border: $BORDER_2;
@@ -2269,37 +2270,38 @@ QSplitter {
 //     padding-right: 4px;
 //     min-width: 10px;
 
-//     &:on {
-//         selection-background-color: $COLOR_ACCENT_2;
-//     }
+    // &:on {
+    //     background-color: #ffffff;
+    //     selection-background-color: $COLOR_ACCENT_2;
+    // }
 
-//     &::drop-down {
-//         subcontrol-origin: padding;
-//         subcontrol-position: top right;
-//         width: 12px;
-//         border-left: 1px solid $COLOR_BACKGROUND_4;
-//     }
+    // &::drop-down {
+    //     subcontrol-origin: padding;
+    //     subcontrol-position: top right;
+    //     width: 12px;
+    //     border-left: 1px solid $COLOR_BACKGROUND_4;
+    // }
 
-//     &::down-arrow {
-//         image: url($PATH_RESOURCES+'feather/arrow_down.png');
-//         height: 8px;
-//         width: 8px;
+    &::down-arrow {
+        image: url('theme-icons:000000/feather/arrow_down.png');
+        height: 8px;
+        width: 8px;
 
-//         &:on,
-//         &:hover,
-//         &:focus {
-//             image: url($PATH_RESOURCES+'feather/arrow_down.png');
-//         }
+        &:on,
+        &:hover,
+        &:focus {
+            image: url('theme-icons:000000/feather/arrow_down.png');
+        }
 
-//     }
+    }
 
-//     QAbstractItemView {
-//         background-color: $COLOR_BACKGROUND_1;
-//         border-radius: $SIZE_BORDER_RADIUS;
-//         border: $BORDER_2;
-//         selection-background-color: $COLOR_ACCENT_2;
-//     }
-// }
+    QAbstractItemView {
+        background-color: #ffffff;
+        // border-radius: $SIZE_BORDER_RADIUS;
+        // border: $BORDER_2;
+        selection-background-color: #ffffff;
+    }
+}
 
 
 /* QAbstractView ----------------------------------------------------------

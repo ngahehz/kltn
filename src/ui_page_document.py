@@ -146,6 +146,18 @@ class Ui_Form(object):
         self.tableWidget_2.verticalHeader().setVisible(False)
         self.verticalLayout_9.addWidget(self.tableWidget_2)
         self.add_btn = QtWidgets.QPushButton(parent=self.widget_2)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(15)
+        self.add_btn.setFont(font)
+        self.add_btn.setStyleSheet("#add_btn\n"
+"{\n"
+"    background-color: #ffffff;\n"
+"    border: 1px solid #6272a4;\n"
+"    border-radius: 5px;    \n"
+"    color: #000000;\n"
+"}\n"
+"")
         self.add_btn.setObjectName("add_btn")
         self.verticalLayout_9.addWidget(self.add_btn)
         self.horizontalLayout_6.addWidget(self.widget_2)
@@ -260,7 +272,6 @@ class Ui_Form(object):
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
         self.search_input.setPlaceholderText(_translate("Form", "Nhập tên tệp"))
         self.comboBox.setItemText(0, _translate("Form", "Arrange"))
         self.comboBox.setItemText(1, _translate("Form", "A - Z"))

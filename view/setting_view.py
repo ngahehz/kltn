@@ -2,7 +2,6 @@ from PyQt6.QtCore import Qt
 from PyQt6 import QtGui
 from PyQt6.QtWidgets import QFileDialog, QMessageBox, QColorDialog
 from PyQt6.QtGui import QPixmap
-from PyQt6.QtCore import QTimer
 
 from src.ui_page_setting import Ui_Form
 
@@ -182,7 +181,6 @@ class Setting(QWidget):
             self.logo_img = True
             self.logo_path = file_path
             self.ui.pushButton_4.setIcon(QtGui.QIcon(file_path))
-    ###########################
 
     ### THÊM ẢNH VÀO CHỖ CHỌN ẢNH DEMO ###
     def insert_image_demo(self, image_id):
@@ -217,7 +215,7 @@ class Setting(QWidget):
             self.bg_img_active_theme = self.controller.get_active_image()
             self.ui.comboBox.setCurrentIndex(self.bg_img_active_theme)
             self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + theme[1] + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-            self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+            self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(221, 230, 255, 0.882)}')
             self.handle_image_click(self.bg_img_path_theme)
 
         self.logo_img_path_theme = theme[2]
@@ -255,7 +253,7 @@ class Setting(QWidget):
         return file_id
 
     ### UPLOAD IMG ###  chưa có làm cái trường hợp mà up 2 ảnh giống nhau á
-    def upload_img(self):
+    def upload_img(self): ### nếu mà đường dẫn có dấu thì sẽ bị lỗi chương trình á tr
         file_path, _ = QFileDialog.getOpenFileName(self, "Select Image", "", "Image Files (*.png *.jpg *.jpeg *.bmp)")
         if file_path:
             name = (file_path.split("/")[-1]).split(".")[0]
@@ -281,23 +279,14 @@ class Setting(QWidget):
         result, self.id_image_demo = self.controller.scale_image(image_id, self.ui.widget_5.width(), self.ui.widget_5.height(), self.ui.comboBox.currentIndex(), 1)
         self.ui.widget_5.setStyleSheet('#widget_5{background-image: url(' + result + '); background-position: center; background-repeat: no-repeat;}')
 
-    ### ĐÓNG MENU ĐỂ THAY BG ###
-    # def change_bg(self):
-    #     try:
-    #         print("Change BG")
-    #         self.change_background()
-    #     except Exception as e:
-    #         print(e)
-
     ### THAY BG ###
     def change_background(self):
         self.parent.ui.left_menu_1.collapseMenu()
         self.bg_image, self.id_image_demo = self.controller.scale_image(self.id_image_demo, self.width_wg, self.height_wg, self.ui.comboBox.currentIndex())
         self.parent.ui.stackedWidget.setStyleSheet('#stackedWidget{background-image: url(' + self.bg_image + '); background-position: center; background-repeat: no-repeat;padding: 0;border-top: 3px solid #ff79c6}')
-        self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(255, 255, 255, 0.626);}')
+        self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(221, 230, 255, 0.882)}')
         # self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.Stretch)
         # self.ui.widget_5.setStyleSheet('#widget_5{background-image: url(' + result + '); background-position: center; background-repeat: no-repeat;}')
-
 
    ### CHỌN MÀU BG NẾU KHÔNG DÙNG ẢNH ###
     def up_color_bg(self, event):
@@ -310,14 +299,17 @@ class Setting(QWidget):
     ### SET ICON COLOR ### này ghi hàm main kh có được tại nó chưa khởi tạo xong bên parent mà nó nhảy vô r
     def load_icon_color(self, color):
         color = color.replace("#", "")
-        self.ui.push_main_img_back_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/material_design/refresh.png"))
-        self.ui.push_logo_back_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/material_design/refresh.png"))
-        self.ui.push_accent_back_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/material_design/refresh.png"))
-        self.ui.push_icon_color_back_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/material_design/refresh.png"))
-        self.ui.push_widget_back_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/material_design/refresh.png"))
+        self.ui.push_main_img_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.push_logo_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.push_accent_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.push_icon_color_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.push_widget_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.upload_img_back_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/refresh.png"))
+        self.ui.pushButton_4.setStyleSheet('#pushButton_4{background-color: ' + self.widget_color_theme + ';}')
         self.ui.pushButton_4.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/image.png"))
-        self.ui.reset_all_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/feather/refresh-cw.png"))
+        self.ui.reset_all_btn.setIcon(QtGui.QIcon("Qss/icons/000000/feather/refresh-cw.png"))
         self.parent.ui.frame_5.setStyleSheet('#frame_5{ background-color: transparent; background-image: url("img/resource/bell.png"); background-position: center; background-repeat: no-repeat;}')
+        # self.parent._document_widget.ui.tableWidget_2.setStyleSheet('#tableWidget_2{background-color: rgba(221, 230, 255, 0.882);}')
 
     
     ### KÉO THẢ ###
