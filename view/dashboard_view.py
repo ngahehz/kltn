@@ -7,6 +7,7 @@ from src.ui_noti_dropdown import DropdownNoti
 from view.document_view import Document
 from view.setting_view import Setting
 from view.summarization_view import Summarization
+from view.search_note_view import Search
 
 from Custom_Widgets import *
 from Custom_Widgets.QAppSettings import QAppSettings
@@ -19,12 +20,14 @@ class MyWindow(QMainWindow):
 
         self._controller = controller
         self._document_widget = Document(controller1, self)
+        self._search_widget = Search(controller1)
         self._setting_widget = Setting(controller2, self)
         self._summarization = Summarization()
 
         self.ui.horizontalLayout_14.addWidget(self._document_widget)
         self.ui.verticalLayout_4.addWidget(self._setting_widget)
         self.ui.horizontalLayout_4.addWidget(self._summarization)
+        self.ui.verticalLayout_search.addWidget(self._search_widget)
 
         loadJsonStyle(
             self, self.ui, jsonFiles={"json-styles/dashboard_style.json"}  
@@ -51,10 +54,11 @@ class MyWindow(QMainWindow):
         self.ui.all_btn.clicked.connect(lambda: self.button_click())             ## Click all button
         self.ui.tags_btn.clicked.connect(lambda: self.button_click())            ## Click tags button
         self.ui.summarize_btn.clicked.connect(lambda: self.button_click())
+        self.ui.search_note_btn.clicked.connect(lambda: self.button_click())
         self.ui.settings_btn.clicked.connect(lambda: self.button_click())        ## Hiển thị trang cài đặt
 
         self.ui.top_logo.clicked.connect(lambda: self.button_click())
-        self.ui.maxi_btn.clicked.connect(self.temp)                             ## Ẩn menu phải
+        # self.ui.maxi_btn.clicked.connect(self.temp)                             ## Ẩn menu phải
         self.ui.add_tag_btn.clicked.connect(self.click_add_labels_btn)            ## Click add tag button
         self.ui.frame_5.mousePressEvent = self.DropDownNoti                     ## Hiển thị noti thông báo
         
@@ -97,6 +101,9 @@ class MyWindow(QMainWindow):
         elif btnName == "settings_btn":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
 
+        elif btnName == "search_note_btn":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_5)
+
         elif btnName == "summarize_btn":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_4)
 
@@ -110,10 +117,6 @@ class MyWindow(QMainWindow):
 
         height_menu = self.ui.menu_btn.sizeHint().height()
         self.ui.widget_3.setMinimumHeight(height_menu)
-
-    # ẩn menu phải
-    def temp(self):
-        self._document_widget.ui.info_right.collapseMenu()
 
     ### TAG ĐỒ Ơ ###    
     def load_menu_labels(self):
@@ -193,3 +196,4 @@ class MyWindow(QMainWindow):
         
         self._document_widget.ui.advanced_search.setIcon(QtGui.QIcon("Qss/icons/000000/font_awesome/solid/sliders.png"))
         self._document_widget.ui.noti_btn.setIcon(QtGui.QIcon("Qss/icons/" + color + "/font_awesome/regular/bell.png"))
+        self._search_widget.ui.sematic_search_btn.setIcon(QtGui.QIcon("Qss/icons/000000/material_design/search.png"))

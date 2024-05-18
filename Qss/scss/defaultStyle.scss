@@ -106,9 +106,16 @@
     padding: 7px;
 }
 
-#noti_fr_btn {
+#noti_fr_btn{
     background-color: #6272a4;
     border-radius: 10px;
+}
+
+#noti_x_lb_btn
+{
+    background-color: transparent;
+    font-weight: 800;
+    border: none;
 }
 
 #noti_btn {
@@ -130,6 +137,8 @@ QHeaderView::section{
 	// background-color: #afc0f4;
 	background-color: #6272a4;
     color: white;
+    font-size: 17px;
+    font-weight: 500;
 	max-width: 30px;
 	border: none;
 	border-style: none;
@@ -142,7 +151,7 @@ QHeaderView::section:vertical
 
 
 #tableWidget_2 .QCheckBox {
-    padding-left: 16px;
+    padding-left: 20px;
 }
 
 #tableWidget_2 .QPushButton {
@@ -169,7 +178,6 @@ QLineEdit {
 	border-radius: 5px;
 	border: 2px solid #ffc9e8;
 	padding-left: 10px;
-    color: #f8f8f2;
 }
 QLineEdit:hover {
 	border: 2px solid rgb(64, 71, 88);
@@ -188,7 +196,8 @@ QDateTimeEdit{
 /// PAGE 2 SETTING ///
 #page_2,
 #page_3,
-#page_4
+#page_4,
+#page_5
 {
     // background-color: #dde6ff;
     background-color: rgba(255, 255, 255, 0.626);
@@ -232,6 +241,61 @@ QLabel[objectName^="dropdownItem"] {
         color: $COLOR_BACKGROUND_4;
     }
 }
+
+/// PAGE 5 - SEMATIC SEARCH ///
+#tableWidget
+{
+    background-color: rgba(255, 255, 255, 0.626);
+}
+
+#sematic_search_checkbox{
+    background-color: $COLOR_BACKGROUND_1;
+    color: $COLOR_TEXT_1;
+    outline: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    &:focus {
+        border: none;
+    }
+
+    &::indicator {
+        margin-left: 2px;
+        height: 25px;
+        width: 25px;
+
+        &:unchecked {
+            image: url('img/resource/checkbox_unchecked.png');
+
+            &:hover,
+            &:focus,
+            &:pressed {
+                border: none;
+                image: url('img/resource/checkbox_unchecked.png');
+            }
+
+            &:disabled {
+                image: url('img/resource/checkbox_unchecked.png');
+            }
+        }
+
+        &:checked {
+            image: url('img/resource/checkbox_checked.png');
+
+            &:hover,
+            &:focus,
+            &:pressed {
+                border: none;
+                image: url('img/resource/checkbox_checked.png');
+            }
+
+            &:disabled {
+                image: url('img/resource/checkbox_checked.png');
+            }
+        }
+    }
+}
+
 
 /// TRANSPARENT ///
 
@@ -285,12 +349,15 @@ QLabel[objectName^="dropdownItem"] {
 // LEFT MENU
 #scrollArea,
 #left_menu_2 .QFrame,
-#scrollAreaWidgetContents_2
+#scrollAreaWidgetContents_2,
+/// SEMATIC SEARCH
+#sematic_search_wg1,
+#sematic_search_wg2,
+#sematic_search_checkbox
 {
     background-color: transparent;
 }
 
-/// BUTTON ///
 
 
 //             //===================================================//

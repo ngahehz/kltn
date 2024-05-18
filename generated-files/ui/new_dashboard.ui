@@ -408,6 +408,29 @@
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="search_note_btn">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>15</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Search</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../TEMP/test2203/Qss/icons/_icons1304.qrc">
+              <normaloff>:/feather/icons/feather/search.png</normaloff>:/feather/icons/feather/search.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QPushButton" name="settings_btn">
             <property name="maximumSize">
              <size>
@@ -639,7 +662,7 @@
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_1">
              <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -669,6 +692,25 @@
                 <layout class="QVBoxLayout" name="verticalLayout_6" />
                </widget>
               </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page_5">
+             <layout class="QVBoxLayout" name="verticalLayout_search">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
              </layout>
             </widget>
             <widget class="QWidget" name="page_2">

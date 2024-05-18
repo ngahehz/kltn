@@ -13,7 +13,7 @@ ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
 PhobertTokenizer = AutoTokenizer.from_pretrained("VoVanPhuc/sup-SimCSE-VietNamese-phobert-base")
 model_embedding = AutoModel.from_pretrained("VoVanPhuc/sup-SimCSE-VietNamese-phobert-base")
 
-index_name = "demo_simcse"
+index_name = "demo_simcse2"
 path_index = "test_search/config/index.json"
 path_data = "test_search/data/data_title.csv"
 batch_size = 128
@@ -25,23 +25,30 @@ client = Elasticsearch(
 )
 
 
-def embed_text(batch_text):
-    encoded_input = PhobertTokenizer(batch_text, padding=True, truncation=True, return_tensors='pt')
-    encoded_input = {k: v.to(model_embedding.device) for k, v in encoded_input.items()}
-    with torch.no_grad():
-        model_output = model_embedding(**encoded_input)
+# def embed_text(batch_text):
+#     encoded_input = PhobertTokenizer(batch_text, padding=True, truncation=True, return_tensors='pt')
+#     encoded_input = {k: v.to(model_embedding.device) for k, v in encoded_input.items()}
+#     with torch.no_grad():
+#         model_output = model_embedding(**encoded_input)
     
-    input_mask_expanded = encoded_input['attention_mask'].unsqueeze(-1).expand(model_output.last_hidden_state.size()).float()
-    sum_embeddings = torch.sum(model_output.last_hidden_state * input_mask_expanded, 1)
-    sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
-    mean_pooled_embeddings = sum_embeddings / sum_mask
+#     input_mask_expanded = encoded_input['attention_mask'].unsqueeze(-1).expand(model_output.last_hidden_state.size()).float()
+#     sum_embeddings = torch.sum(model_output.last_hidden_state * input_mask_expanded, 1)
+#     sum_mask = torch.clamp(input_mask_expanded.sum(1), min=1e-9)
+#     mean_pooled_embeddings = sum_embeddings / sum_mask
     
-    return [vector.tolist() for vector in mean_pooled_embeddings]
+#     return [vector.tolist() for vector in mean_pooled_embeddings]
 
 
 # def embed_text(batch_text):
 #     batch_embedding = model_embedding.encode(batch_text)
 #     return [vector.tolist() for vector in batch_embedding]
+
+def embed_text(texts):
+    inputs = PhobertTokenizer(texts, padding=True, truncation=True, return_tensors="pt")
+    with torch.no_grad():
+        embeddings = model_embedding(**inputs, output_hidden_states=True, return_dict=True).pooler_output
+    # return [vector.tolist() for vector in embeddings]
+    return embeddings.tolist()
 
 
 # def index_batch(docs):
@@ -90,8 +97,8 @@ def search(query, type_ranker):
     if type_ranker == 'SimCSE':
         time_embed = time.time()
         query_vector = embed_text([word_tokenize(query, format="text")])[0]
-        print(len(query_vector))
-        print('TIME EMBEDDING ', time.time() - time_embed)
+        # print(len(query_vector))
+        # print('TIME EMBEDDING ', time.time() - time_embed)
         script_query = {
 
             "script_score": {
@@ -108,7 +115,6 @@ def search(query, type_ranker):
     else:
         script_query = {
             "match": {
-            #   "content": {
               "title": {
                 "query": query,
                 "fuzziness": "AUTO"
@@ -118,26 +124,24 @@ def search(query, type_ranker):
 
 
     response = client.search(
-        index='demo_simcse',
-        # index='test_tina1',
+        index='demo_simcse2',
         body={
             "size": 10,
             "query": script_query,
             "_source": {
                 "includes": ["id", "title"]
-                # "includes": ["id", "content"]
-
             },
         },
         ignore=[400]
     )
 
     result = []
-    print(response)
+    # print(response)
     for hit in response["hits"]["hits"]:
-        result.append(hit["_source"]['title'])
-        # result.append(hit["_source"]['id'])
+        result.append([hit["_source"]['title'], hit["_score"]])
     return result
 
-print(search('tình yêu tuổi học trò', 'SimCSE'))
-print(search('tình yêu tuổi học trò', ''))
+s = search('Công nghệ', '')
+for i in s:
+    print(i)
+# print(search('Công nghệ', ''))

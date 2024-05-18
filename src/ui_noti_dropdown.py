@@ -66,7 +66,7 @@ class DropdownNoti(QWidget):
             return
         
         self.parent.ui.stackedWidget.setCurrentWidget(self.parent.ui.page_3)
-        self.parent._document_widget.open_file_inside(QUrl.fromLocalFile(row[2]), os.path.basename(row[2]))
+        self.parent._document_widget.open_file_inside(row[2], os.path.basename(row[2]))
 
     def okButtonClicked(self, row):
         if not os.path.exists(row[2]):

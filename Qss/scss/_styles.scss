@@ -180,32 +180,32 @@ QCheckBox {
         width: 25px;
 
         &:unchecked {
-            image: url('img/resource/star1.png');
+            image: url('img/resource/star.png');
 
             &:hover,
             &:focus,
             &:pressed {
                 border: none;
-                image: url('img/resource/star1.png');
+                image: url('img/resource/star.png');
             }
 
             &:disabled {
-                image: url('img/resource/star1.png');
+                image: url('img/resource/star.png');
             }
         }
 
         &:checked {
-            image: url('img/resource/star2.png');
+            image: url('img/resource/star3.png');
 
             &:hover,
             &:focus,
             &:pressed {
                 border: none;
-                image: url('img/resource/star2.png');
+                image: url('img/resource/star3.png');
             }
 
             &:disabled {
-                image: url('img/resource/star2.png');
+                image: url('img/resource/star3.png');
             }
         }
 

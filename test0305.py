@@ -1,42 +1,82 @@
-# from elasticsearch import Elasticsearch
+import sys
+from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget
+from PyQt5.QtCore import Qt
 
-# CERT_FINGERPRINT = "a621638c3d236dffb6be182fe2dac0dbd97d0ea27e823c6269beb3d3d69f93d4"
-# ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
+class AutoResizeTableWidget(QTableWidget):
+    def __init__(self, *args):
+        super(AutoResizeTableWidget, self).__init__(*args)
+        self.setWordWrap(True)
+        self.cellChanged.connect(self.adjustRowHeight)
 
-# client = Elasticsearch(
-#     "https://localhost:9200",
-#     ssl_assert_fingerprint=CERT_FINGERPRINT,
-#     basic_auth=("elastic", ELASTIC_PASSWORD)
-# )
+    def adjustRowHeight(self):
+        for row in range(self.rowCount()):
+            max_height = 0
+            for column in range(self.columnCount()):
+                item = self.item(row, column)
+                if item:
+                    # Calculate the height needed for the content
+                    item_height = self.getItemHeight(item)
+                    if item_height > max_height:
+                        max_height = item_height
+            # Set the row height
+            self.setRowHeight(row, max_height)
 
-# result = client.search(index='test_tina1', body={"query": {"match_all": {}}})
+    def getItemHeight(self, item):
+        # Create a widget with the same text and font as the item
+        text = item.text()
+        font = item.font()
+        option = self.viewOptions()
+        option.font = font
 
-# # Lặp qua kết quả trả về và in ra thông tin của từng tài liệu
-# for hit in result['hits']['hits']:
-#     doc = hit['_source']
-#     print("ID:", doc['id'])
-#     # print("Content:", doc['content'])
-#     # print("Title Vector:", doc['title_vector'])
-#     print()  # In một dòng trống để phân biệt giữa các tài liệu
+        # Calculate the required height based on the text and the widget's width
+        rect = self.visualItemRect(item)
+        doc = self.createDocument(text, font, rect.width())
+        doc_height = doc.size().height()
+        
+        # Add some padding
+        padding = 10
+        return doc_height + padding
 
+    def createDocument(self, text, font, width):
+        from PyQt5.QtGui import QTextDocument
+        doc = QTextDocument()
+        doc.setDefaultFont(font)
+        doc.setTextWidth(width)
+        doc.setPlainText(text)
+        return doc
 
-from elasticsearch import Elasticsearch
+class MainWindow(QWidget):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.initUI()
 
+    def initUI(self):
+        self.layout = QVBoxLayout(self)
+        self.table = AutoResizeTableWidget(5, 3)  # 5 rows and 3 columns
 
-CERT_FINGERPRINT = "a621638c3d236dffb6be182fe2dac0dbd97d0ea27e823c6269beb3d3d69f93d4"
-ELASTIC_PASSWORD = "xtX3XzQB1JJS=9MeADZK"
+        # Example content
+        content = [
+            ["Short text", "Another short text", "Yet another short text"],
+            ["A longer piece of text that should wrap to the next line if the column is not wide enough.", 
+             "Short text", "Another short text"],
+            ["Short text", "Another short text", 
+             "A very long piece of text that should cause the cell height to increase significantly when it wraps to multiple lines."],
+            ["Short text", "Another short text", "Yet another short text"],
+            ["Short text", "Another short text", "Yet another short text"]
+        ]
 
-es = Elasticsearch(
-    "https://localhost:9200",
-    ssl_assert_fingerprint=CERT_FINGERPRINT,
-    basic_auth=("elastic", ELASTIC_PASSWORD)
-)
+        for row in range(5):
+            for column in range(3):
+                item = QTableWidgetItem(content[row][column])
+                self.table.setItem(row, column, item)
 
-# Xóa toàn bộ index
-index_name = "demo_simcse"
+        self.layout.addWidget(self.table)
+        self.setLayout(self.layout)
+        self.setWindowTitle('Auto-Resizing QTableWidget')
+        self.setGeometry(100, 100, 800, 600)
 
-try:
-    response = es.indices.delete(index=index_name)
-    print("Index đã được xóa thành công:", index_name)
-except Exception as e:
-    print("Lỗi khi xóa index:", e)
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    mainWin = MainWindow()
+    mainWin.show()
+    sys.exit(app.exec_())

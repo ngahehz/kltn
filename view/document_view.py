@@ -9,6 +9,9 @@ from PyQt6.QtWebEngineWidgets import QWebEngineView
 from src.ui_page_document import Ui_Form
 from view.dialog_reminder_view import *
 from view.advanced_search_view import *
+import pypandoc
+import logging
+logging.getLogger('pypandoc').setLevel(logging.WARNING)
 
 class Document(QWidget):
     def __init__(self, controller, parent):
@@ -17,11 +20,13 @@ class Document(QWidget):
         self.ui.setupUi(self)
         self.controller = controller
         self.parent = parent
+        self.noti_word = True
 
         self.label = None
         self.ui.add_btn.clicked.connect(lambda: self.add_file())                ## Thêm file
         self.ui.tableWidget_2.itemClicked.connect(self.on_item_clicked)         ## Hiển thị thông tin file khi click vào file ở table
-        self.ui.note_txt.textChanged.connect(self.note_text_change)             ## Cập nhật note của file
+        # self.ui.note_txt.textChanged.connect(self.note_text_change)             ## Cập nhật note của file
+        self.ui.noti_save_btn.clicked.connect(self.save_noti)             ## Cập nhật note của file
         self.ui.noti_btn.clicked.connect(self.open_noti_dialog)                 ## Mở dialog cài đặt thông báo
         self.ui.tabWidget_2.tabCloseRequested.connect(self.close_tab)           ## Đóng tab
 
@@ -35,13 +40,17 @@ class Document(QWidget):
 
         self.ui.tableWidget_2.keyPressEvent = self.keyPressEvent                ## Sự kiện di chuyển lên xuống bằng bàn phím trên table
         self.ui.comboBox.currentIndexChanged.connect(self.sort_table)
+        self.ui.noti_x_lb_btn.clicked.connect(self.close_info_right)
 
         self.ui.tableWidget_2.hideColumn(0)
         self.ui.tableWidget_2.setColumnWidth(1, 200)  
         self.ui.tableWidget_2.setColumnWidth(2, 50) 
-        self.ui.tableWidget_2.setColumnWidth(5, 60) 
+        self.ui.tableWidget_2.setColumnWidth(5, 68) 
         self.ui.tableWidget_2.setColumnWidth(6, 60) 
         self.ui.tableWidget_2.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
+
+    def close_info_right(self):
+        self.ui.info_right.collapseMenu()
 
     def show_advanced_search_dialog(self):
         self.advanced_search_dialog = AdvancedDialogView(self)
@@ -132,12 +141,13 @@ class Document(QWidget):
         else:
             self.ui.note_txt.setText(str(self.row_focus[7]))
 
-        self.ui.new_tag_cbb.setCurrentIndex(1)
+        self.ui.new_tag_cbb.setCurrentIndex(2)
         self.tag_widget()
 
     ################ CẬP NHẬT NOTES CỦA FILE ################ (t thêm s cho nó không có màu)
-    def note_text_change(self):
+    def save_noti(self):
         self.controller.update_note_of_file(self.row_focus[0], self.ui.note_txt.toPlainText())
+
 
     ################ MỞ DIALOG CÀI ĐẶT THÔNG BÁO ################
     def open_noti_dialog(self):
@@ -162,7 +172,7 @@ class Document(QWidget):
         checkbox = QCheckBox()
         checkbox.setFocusPolicy(Qt.NoFocus)
         if row[10] == 1:                # không để i = 0 vì có thể trùng file đầu
-            checkbox.setChecked(True)
+            checkbox.setChecked(True)   # chục ngày đọc lại chả hiểu gì
         combobox = self.create_cbb()
         combobox.setFocusPolicy(Qt.NoFocus)
         self.comboBoxes.append(combobox)
@@ -182,7 +192,7 @@ class Document(QWidget):
 
         button.clicked.connect(lambda event, id=row[0]: self.delete_file(id))
         combobox.activated.connect(lambda index, combo_box=combobox: self.combo_box_changed(index, combo_box))
-        combobox.setCurrentText(self.controller.get_label_name_by_id_file(row[6]))
+        combobox.setCurrentText(self.controller.get_label_name_by_file_id(row[6]))
         checkbox.stateChanged.connect(lambda state, id=row[0]: self.set_priority(id))
 
         if not os.path.exists(row[2]):
@@ -345,19 +355,19 @@ class Document(QWidget):
 
             if action == openInHere:
                 id = int(self.ui.tableWidget_2.item(self.ui.tableWidget_2.currentRow(), 0).text())
-                path = self.controller.get_url_by_id_file(id)
-                self.open_file_inside(QUrl.fromLocalFile(path), os.path.basename(path))
+                path = self.controller.get_url_by_file_id(id)
+                self.open_file_inside(path, os.path.basename(path))
                 
             elif action == openByApp:
                 id = int(self.ui.tableWidget_2.item(self.ui.tableWidget_2.currentRow(), 0).text())
-                path = self.controller.get_url_by_id_file(id)
+                path = self.controller.get_url_by_file_id(id)
                 if not os.path.exists(path):
                     print("File not found")
                     QMessageBox.warning(self, "Notification", "File not exists")
                 os.startfile(path)
         
     ### MỞ FILE TRONG TAB MỚI ###
-    def open_file_inside(self, qurl=None, label="blank"):
+    def open_file_inside(self, url, label="blank"):
         open_tab_count = self.ui.tabWidget_2.count()
 
         # kiểm tra nếu tab đã được mở
@@ -366,21 +376,39 @@ class Document(QWidget):
             if tab_name == label:
                 self.ui.tabWidget_2.setCurrentIndex(i)
                 return
-
-        # kiểm tra đường dẫn có trống không
-        if qurl is None:
-            qurl = QUrl("http://www.google.com")
-
         # load the url
         web = QWebEngineView()
 
         # enable plugins
         web.settings().setAttribute(web.settings().WebAttribute.PluginsEnabled, True)
         # enable pdf viewer
-        # web.setting().setAttribute(QWebEngineSettings.PdfViewerEnabled, True)
         web.settings().setAttribute(web.settings().WebAttribute.PdfViewerEnabled, True)
+        
+        if url.lower().endswith(('.doc', '.docx')):
+            if self.noti_word:
+                QMessageBox.information(self, 'Thông báo', 'Định dạng của word chưa được hỗ trợ. Chỉ đang hiển thị dưới dạng html, hãy xem trực tiếp để có trải nghiệm tốt nhất.')
+                self.noti_word = False
+            output = pypandoc.convert_file(url, 'html')
+            mathjax_script = '''
+                <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+                </script>
+                <script type="text/x-mathjax-config">
+                MathJax.Hub.Config({
+                    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+                });
+                </script>
+                '''
+            html_content = f"{mathjax_script}{output}"
+            
+            web.setHtml(html_content)
 
-        web.setUrl(qurl)
+        elif url.lower().endswith('.pdf'):
+            web.setUrl(QUrl.fromLocalFile(url))
+
+        else:
+            QMessageBox.warning(self, "Warning", "Unsupported file format.")
+            return
 
         # hiển thị tab
         i = self.ui.tabWidget_2.addTab(web, label)
@@ -458,10 +486,11 @@ class Document(QWidget):
 
     def load_cbb(self):
         self.ui.new_tag_cbb.addItem("(+)")
+        self.ui.new_tag_cbb.addItem("(-)")
         self.ui.new_tag_cbb.addItem("")
         for value in self.controller.get_tags().values():
             self.ui.new_tag_cbb.addItem(value[1])
-        self.ui.new_tag_cbb.setCurrentIndex(1)
+        self.ui.new_tag_cbb.setCurrentIndex(2)
 
     def new_tag_cbb_changed(self):
         if self.ui.new_tag_cbb.currentText() == "(+)":
@@ -473,9 +502,27 @@ class Document(QWidget):
                     self.ui.new_tag_cbb.setCurrentIndex(self.ui.new_tag_cbb.count() - 1)
                 else:
                     QMessageBox.warning(self, "Notification", "Tag name already exists")
-                    self.ui.new_tag_cbb.setCurrentIndex(1)
+                    self.ui.new_tag_cbb.setCurrentIndex(2)
             else:
-                self.ui.new_tag_cbb.setCurrentIndex(1)
+                self.ui.new_tag_cbb.setCurrentIndex(2)
+                
+        elif self.ui.new_tag_cbb.currentText() == "(-)":
+            tags = [self.ui.new_tag_cbb.itemText(i) for i in range(3, self.ui.new_tag_cbb.count())]
+            tag_name, ok = QInputDialog.getItem(self, "Select Tag Name", "Select the tag name you want to delete:", tags, editable=False)
+
+            if ok:
+                index = tags.index(tag_name)
+                if index in range(0, 13):
+                    QMessageBox.warning(self, "Notification", "Cannot delete default tag")
+                    self.ui.new_tag_cbb.setCurrentIndex(2)
+                    return
+                self.controller.delete_tag(tag_name)
+                index = self.ui.new_tag_cbb.findText(tag_name)
+                self.ui.new_tag_cbb.removeItem(index)
+                self.ui.new_tag_cbb.setCurrentIndex(2)
+                self.ui.info_right.collapseMenu()
+            else:
+                self.ui.new_tag_cbb.setCurrentIndex(2)
 
     def tag_widget(self):
         if self.ui.new_tag_wg.layout() is None:
@@ -493,9 +540,7 @@ class Document(QWidget):
         self.add_new_frame(self.controller.get_files_tags(id))
 
     def add_new_frame(self, list = None):
-        # print("list",list)
         if list:
-            # print("1")
             for i, tag in enumerate(list.values()):
                 new_frame = self.create_frame(self.controller.get_tags()[tag[2]][1])
                 row = i // 2 + 1
@@ -506,16 +551,14 @@ class Document(QWidget):
                 new_frame.setMinimumWidth(88)
                 
         elif self.ui.new_tag_cbb.currentText() == "":
-            # print("2")
             return
         
         else:
-            print("3")
             # print(self.row_focus[0], self.ui.new_tag_cbb.currentText())
             result = self.controller.add_file_tag_to_database(self.row_focus[0], self.ui.new_tag_cbb.currentText())
             if not result[0]:
                 QMessageBox.warning(self, "Notification", "Tag name already exists in this file")
-                self.ui.new_tag_cbb.setCurrentIndex(1)
+                self.ui.new_tag_cbb.setCurrentIndex(2)
                 return
             new_frame = self.create_frame(self.ui.new_tag_cbb.currentText())
             row = len(self.frames) // 2 + 1
@@ -525,7 +568,6 @@ class Document(QWidget):
             new_frame.setMaximumWidth(88)
             new_frame.setMinimumWidth(88)
         
-
     def create_frame(self, text):
         frame = QWidget()
         frame.setObjectName("frm_tag")
@@ -572,7 +614,6 @@ class Document(QWidget):
         frame.setLayout(layout)
         return frame
     
-
     def remove_frame(self, frame, text):
         self.layout.removeWidget(frame)
         frame.deleteLater()

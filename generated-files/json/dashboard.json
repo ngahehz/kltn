@@ -33,6 +33,10 @@
       "icon": "../../TEMP/test2203/Qss/icons/icons/feather/minimize-2.png"
     },
     {
+      "name": "search_note_btn",
+      "icon": "../../TEMP/test2203/Qss/icons/icons/feather/search.png"
+    },
+    {
       "name": "settings_btn",
       "icon": "../../TEMP/test2203/Qss/icons/icons/feather/settings.png"
     },

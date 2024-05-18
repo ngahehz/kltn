@@ -74,6 +74,12 @@
           <height>245</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
        </widget>
       </item>
      </layout>
@@ -176,6 +182,12 @@
           <width>16777215</width>
           <height>245</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>14</pointsize>
+         </font>
         </property>
        </widget>
       </item>

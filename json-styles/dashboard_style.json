@@ -9,7 +9,14 @@
                 {
                     "close": "close_btn",
                     "moveWindow": "header",
-                    "minimize": "mini_btn"
+                    "minimize": "mini_btn",
+                    "restore":[
+						{	
+							"buttonName": "maxi_btn",
+							"normalIcon": ":/feather/icons/feather/maximize.png",
+							"maximizedIcon": ":/feather/icons/feather/minimize.png"
+						}
+					]
                 }
             ]
         }

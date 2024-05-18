@@ -135,19 +135,19 @@ QCheckBox {
     height: 25px;
     width: 25px; }
     QCheckBox::indicator:unchecked {
-      image: url("img/resource/star1.png"); }
+      image: url("img/resource/star.png"); }
       QCheckBox::indicator:unchecked:hover, QCheckBox::indicator:unchecked:focus, QCheckBox::indicator:unchecked:pressed {
         border: none;
-        image: url("img/resource/star1.png"); }
+        image: url("img/resource/star.png"); }
       QCheckBox::indicator:unchecked:disabled {
-        image: url("img/resource/star1.png"); }
+        image: url("img/resource/star.png"); }
     QCheckBox::indicator:checked {
-      image: url("img/resource/star2.png"); }
+      image: url("img/resource/star3.png"); }
       QCheckBox::indicator:checked:hover, QCheckBox::indicator:checked:focus, QCheckBox::indicator:checked:pressed {
         border: none;
-        image: url("img/resource/star2.png"); }
+        image: url("img/resource/star3.png"); }
       QCheckBox::indicator:checked:disabled {
-        image: url("img/resource/star2.png"); }
+        image: url("img/resource/star3.png"); }
     QCheckBox::indicator:indeterminate {
       image: url("theme-icons:f1f2f6/feather/checkbox_indeterminate.png"); }
       QCheckBox::indicator:indeterminate:disabled {
@@ -1701,6 +1701,11 @@ PlotWidget {
   background-color: #6272a4;
   border-radius: 10px; }
 
+#noti_x_lb_btn {
+  background-color: transparent;
+  font-weight: 800;
+  border: none; }
+
 #noti_btn {
   background-color: transparent;
   border: none;
@@ -1714,6 +1719,8 @@ PlotWidget {
 QHeaderView::section {
   background-color: #6272a4;
   color: white;
+  font-size: 17px;
+  font-weight: 500;
   max-width: 30px;
   border: none;
   border-style: none; }
@@ -1722,7 +1729,7 @@ QHeaderView::section:vertical {
   border: 1px solid #6272a4; }
 
 #tableWidget_2 .QCheckBox {
-  padding-left: 16px; }
+  padding-left: 20px; }
 
 #tableWidget_2 .QPushButton {
   border: 2px solid #6272a4;
@@ -1743,8 +1750,7 @@ QLineEdit {
   background-color: #ffffff;
   border-radius: 5px;
   border: 2px solid #ffc9e8;
-  padding-left: 10px;
-  color: #f8f8f2; }
+  padding-left: 10px; }
 
 QLineEdit:hover {
   border: 2px solid #404758; }
@@ -1757,7 +1763,8 @@ QDateTimeEdit {
 
 #page_2,
 #page_3,
-#page_4 {
+#page_4,
+#page_5 {
   background-color: rgba(255, 255, 255, 62%); }
 
 #frame_10 {
@@ -1785,6 +1792,36 @@ QLabel[objectName^="dropdownItem"] {
   QLabel[objectName^="dropdownItem"]:focus {
     background-color: #FFD3EC;
     color: #BBC3D8; }
+
+#tableWidget {
+  background-color: rgba(255, 255, 255, 62%); }
+
+#sematic_search_checkbox {
+  background-color: #dde6ff;
+  color: #333333;
+  outline: none;
+  padding-top: 4px;
+  padding-bottom: 4px; }
+  #sematic_search_checkbox:focus {
+    border: none; }
+  #sematic_search_checkbox::indicator {
+    margin-left: 2px;
+    height: 25px;
+    width: 25px; }
+    #sematic_search_checkbox::indicator:unchecked {
+      image: url("img/resource/checkbox_unchecked.png"); }
+      #sematic_search_checkbox::indicator:unchecked:hover, #sematic_search_checkbox::indicator:unchecked:focus, #sematic_search_checkbox::indicator:unchecked:pressed {
+        border: none;
+        image: url("img/resource/checkbox_unchecked.png"); }
+      #sematic_search_checkbox::indicator:unchecked:disabled {
+        image: url("img/resource/checkbox_unchecked.png"); }
+    #sematic_search_checkbox::indicator:checked {
+      image: url("img/resource/checkbox_checked.png"); }
+      #sematic_search_checkbox::indicator:checked:hover, #sematic_search_checkbox::indicator:checked:focus, #sematic_search_checkbox::indicator:checked:pressed {
+        border: none;
+        image: url("img/resource/checkbox_checked.png"); }
+      #sematic_search_checkbox::indicator:checked:disabled {
+        image: url("img/resource/checkbox_checked.png"); }
 
 #frame,
 #frame_4,
@@ -1831,5 +1868,8 @@ QLabel[objectName^="dropdownItem"] {
 #new_tag_fr,
 #scrollArea,
 #left_menu_2 .QFrame,
-#scrollAreaWidgetContents_2 {
+#scrollAreaWidgetContents_2,
+#sematic_search_wg1,
+#sematic_search_wg2,
+#sematic_search_checkbox {
   background-color: transparent; }

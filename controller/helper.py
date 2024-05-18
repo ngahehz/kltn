@@ -138,35 +138,37 @@ def remove_stopwords(line):
 
 label_encoder = pickle.load(open(os.path.join(MODEL_PATH,"label_encoder.pkl"), 'rb'))
 
-model2 = pickle.load(open(os.path.join(MODEL_PATH,"naive_bayes.pkl"), 'rb'))
-model3 = pickle.load(open(os.path.join(MODEL_PATH,"linear_classifier.pkl"), 'rb'))
+# model2 = pickle.load(open(os.path.join(MODEL_PATH,"naive_bayes.pkl"), 'rb'))
+model_linear_classifier = pickle.load(open(os.path.join(MODEL_PATH,"linear_classifier.pkl"), 'rb'))
 
 def predict_tag (text):
     text = text_preprocess(text)
 
-    probabilities = model3.predict_proba([text])[0]
+    probabilities = model_linear_classifier.predict_proba([text])[0]
     top_labels_indices = probabilities.argsort()[-2:][::-1]
-    top_labels = model3.classes_[top_labels_indices]
-
+    # top_labels = model3.classes_[top_labels_indices]
     top_probabilities = probabilities[top_labels_indices]
 
     # In ra nhãn và xác suất
-    for label, prob in zip(top_labels, top_probabilities):
+    for label, prob in zip(top_labels_indices, top_probabilities):
         print(f"Nhãn: {label}, Xác suất: {prob:.4f}")
+        print()
 
-    if abs(top_probabilities[0] - top_probabilities[1]) <= 0.3:
-        lb = [label_encoder.inverse_transform([x]) for x in top_labels]
+    if abs(top_probabilities[0] - top_probabilities[1]) <= 0.2:
+        lb = [label_encoder.inverse_transform([x]) for x in top_labels_indices]
         return lb
     elif top_probabilities[0] > top_probabilities[1]:
-        return label_encoder.inverse_transform([top_labels[0]])
+        return label_encoder.inverse_transform([top_labels_indices[0]])
     else:
-        return label_encoder.inverse_transform([top_labels[1]])
+        return label_encoder.inverse_transform([top_labels_indices[1]])
 
 
 def summarizer(text):
     contents = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)
     vectorizer = TfidfVectorizer()
     X = vectorizer.fit_transform(contents)  
+    if len(contents) <= 3:
+        return text + " (Độ dài văn bản quá ngắn, không thể tóm tắt)"
     if len(contents) <= 10:
         n_clusters = 3 
     elif len(contents) <= 20:
@@ -187,9 +189,61 @@ def summarizer(text):
 
 
 
+from nltk.translate.bleu_score import corpus_bleu
+from rouge import Rouge
+
+def evaluate_summarizer(summarizer_function, texts, references):
+    summaries = [summarizer_function(text) for text in texts]
+
+    bleu_score = corpus_bleu([[ref.split()] for ref in references], [sum.split() for sum in summaries])
+    
+    rouge = Rouge()
+    rouge_scores = rouge.get_scores(summaries, references, avg=True)
+
+    return bleu_score, rouge_scores
+
+texts = [
+    # "Trái đất là hành tinh thứ ba từ Mặt Trời trong hệ Mặt Trời. Nó là hành tinh duy nhất trong hệ Mặt Trời được biết đến có sự sống. Trái đất có một bầu khí quyển bảo vệ, chứa nhiều loại khí cần thiết cho sự sống như oxy và nitơ. Bề mặt trái đất được bao phủ bởi nước, lục địa và nhiều loại địa hình khác nhau như núi, đồng bằng, sa mạc. Các nhà khoa học vẫn đang không ngừng nghiên cứu để tìm hiểu thêm về hành tinh này và những gì ẩn chứa bên trong nó. Một số tôn giáo coi Trái đất là một sinh vật sống, và bảo vệ môi trường là một phần quan trọng trong các giáo lý của họ. Ngoài ra, việc tìm kiếm sự sống ngoài hành tinh trên các hành tinh khác trong hệ Mặt Trời và các hệ sao khác cũng là một lĩnh vực nghiên cứu khoa học quan trọng."
+""" Trí tuệ nhân tạo (AI) đang nhanh chóng thay đổi các ngành công nghiệp và xã hội trên toàn thế giới. 
+Từ y tế đến tài chính, các ứng dụng AI đang nâng cao hiệu quả, độ chính xác và năng suất. 
+Trong lĩnh vực y tế, các thuật toán AI được sử dụng để chẩn đoán bệnh, dự đoán kết quả điều trị và cá nhân hóa kế hoạch điều trị. 
+Trong tài chính, AI đang tối ưu hóa chiến lược giao dịch, phát hiện gian lận và quản lý rủi ro. 
+Ngoài ra, AI còn đóng vai trò quan trọng trong các lĩnh vực như giao thông, giáo dục và giải trí. 
+Xe tự lái, các nền tảng học tập thích ứng và hệ thống gợi ý là một vài ví dụ về cách AI đang tạo ra ảnh hưởng rõ rệt đến cuộc sống hàng ngày.
+Tuy nhiên, sự phát triển của AI cũng đặt ra những câu hỏi quan trọng về đạo đức và xã hội. 
+Các vấn đề như thay thế việc làm, lo ngại về quyền riêng tư và khả năng ra quyết định thiên vị cần được xem xét và giải quyết cẩn thận. 
+Khi AI tiếp tục phát triển, điều quan trọng là các nhà hoạch định chính sách, doanh nghiệp và cá nhân phải hợp tác và đảm bảo rằng các công nghệ AI được phát triển và sử dụng một cách có trách nhiệm vì lợi ích của tất cả mọi người."""]
+
+# Các tóm tắt tham chiếu tương ứng
+# references = [
+#     "Trái đất là hành tinh thứ ba từ Mặt Trời và là nơi duy nhất có sự sống trong hệ Mặt Trời. Với bầu khí quyển chứa các khí cần thiết, bề mặt Trái đất bao gồm nước và nhiều loại địa hình. Các nhà khoa học đang nghiên cứu về Trái đất và sự sống trên các hành tinh khác. Một số tôn giáo coi Trái đất là sinh vật sống và khuyến khích bảo vệ môi trường."
+# ]
+# Example evaluation
+# bleu_score, rouge_scores = evaluate_summarizer(summarizer, texts, references)
+# print("BLEU Score:", bleu_score)
+# print("ROUGE Scores:", rouge_scores)
+
+from sklearn.feature_extraction.text import CountVectorizer
+from nltk import sent_tokenize
+from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
+
+def content_based(summary, full_text):
+    sentences = sent_tokenize(full_text)
+
+    vectorizer = CountVectorizer().fit(sentences)
+    full_text_vector = vectorizer.transform([full_text])
+    summary_vector = vectorizer.transform([summary])
+
+    score = cosine_similarity(full_text_vector, summary_vector)[0][0]
+
+    return score
 
 
+abc = summarizer(texts[0])
 
+score = content_based(abc, texts[0])
+print(score)
 
 
 

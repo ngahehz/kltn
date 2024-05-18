@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>930</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QWidget" name="sematic_search_wg1" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QCheckBox" name="sematic_search_checkbox">
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Semantic Search</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="sematic_search_txt">
+        <property name="minimumSize">
+         <size>
+          <width>450</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>450</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sematic_search_btn">
+        <property name="minimumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+        <property name="text">
+         <string />
+        </property>
+        <property name="icon">
+         <iconset resource="../../../TEMP/test2203/Qss/icons/_icons1304.qrc">
+          <normaloff>:/material_design/icons/material_design/search.png</normaloff>:/material_design/icons/material_design/search.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>24</width>
+          <height>24</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="sematic_search_wg2" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>500</height>
+      </size>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Note</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <connections />
+<customwidgets><customwidget><class>QPushButton</class><extends>QPushButton</extends><header location="global">Custom_Widgets.Theme.h</header><container>1</container></customwidget><customwidget><class>QLabel</class><extends>QLabel</extends><header location="global">Custom_Widgets.Theme.h</header><container>1</container></customwidget></customwidgets></ui>

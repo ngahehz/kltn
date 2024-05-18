@@ -37,8 +37,8 @@ def search(query, type_ranker):
     if type_ranker == 'SimCSE':
         time_embed = time.time()
         query_vector = embed_text([word_tokenize(query, format="text")])[0]
-        print(len(query_vector))
-        print('TIME EMBEDDING ', time.time() - time_embed)
+        # print(len(query_vector))
+        # print('TIME EMBEDDING ', time.time() - time_embed)
         script_query = {
 
             "script_score": {
@@ -63,23 +63,61 @@ def search(query, type_ranker):
         }
 
 
-    response = client.search(
-        index='demo_simcse',
-        body={
-            "size": 10,
-            "query": script_query,
-            "_source": {
-                "includes": ["id", "title"]
-
-            },
-        },
-        ignore=[400]
-    )
-
+    with client.options(ignore_status=[400]):
+        response = client.search(
+            index='demo_simcse',
+            body={
+                "size": 10,
+                "query": script_query,
+                "_source": {
+                    "includes": ["id", "title"]
+                },
+            }
+        )
+        
     result = []
-    print(response)
+    # print(response)
     for hit in response["hits"]["hits"]:
         result.append(hit["_source"]['title'])
     return result
 
-print(search('dạy đời', 'SimCSE'))
+# print(search('kinh tế', 'SimCSE'))
+# print(search('văn hóa', ' '))
+print(search('Đời sống', 'SimCSE'))
+
+titles = ["Công nghệ", "Giáo dục", "Giải trí", "Khoa học", "Kinh tế", "Nhà đất", "Pháp luật",
+          "Thế giới", "Thể thao", "Văn hóa", "Xe cộ", "Xã hội", "Đời sống"]
+
+
+
+# Thực hiện truy vấn để lấy tất cả các tài liệu từ chỉ mục
+
+# response = client.search(index="tina1", body={"query": {"match_all": {}}})
+# response = client.search(index="tina1", id = 1000)
+
+# # In ra ID và body của mỗi tài liệu
+# for doc in response['hits']['hits']:
+#     print(f"ID: {doc['_id']}")
+#     print(f"Body: {doc['_source']}")
+#     print("-------------")
+
+
+
+
+# resp = client.get(index="tina1", id=1000)
+# print(resp['_source'])
+
+
+
+
+
+# result = client.search(index='test_tina1', body={"query": {"match_all": {}}})
+
+# # Lặp qua kết quả trả về và in ra thông tin của từng tài liệu
+# for hit in result['hits']['hits']:
+#     doc = hit['_source']
+#     print("ID:", doc['id'])
+#     # print("Content:", doc['content'])
+#     # print("Title Vector:", doc['title_vector'])
+#     print()  # In một dòng trống để phân biệt giữa các tài liệu
+
