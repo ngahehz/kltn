@@ -416,7 +416,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Search</string>
+             <string>  Search</string>
             </property>
             <property name="icon">
              <iconset resource="../../../TEMP/test2203/Qss/icons/_icons1304.qrc">
@@ -662,7 +662,7 @@
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page_1">
              <layout class="QHBoxLayout" name="horizontalLayout_5">

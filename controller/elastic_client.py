@@ -125,7 +125,7 @@ class ElasticClient:
 
         for hit in response["hits"]["hits"]:
             result.append([hit["_score"], hit["_id"], hit["_source"]['content']])
-            print(hit)
+            # print(hit)
         return result
     
     # def embed_text(self, batch_text):

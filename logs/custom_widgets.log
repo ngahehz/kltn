@@ -119681,3 +119681,510 @@ elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(H
 2024-05-19 00:17:30,479 - DEBUG - Starting new HTTPS connection (1): localhost:9200
 2024-05-19 00:17:30,534 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
 2024-05-19 00:17:30,534 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.056s]
+2024-05-20 10:26:31,364 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-20 10:26:31,897 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-20 10:26:32,908 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-20 10:26:36,391 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-20 10:26:37,548 - INFO - Checking icons for qt designer app.
+2024-05-20 10:26:37,912 - INFO - all icons have been checked and missing icons generated!
+2024-05-20 10:27:22,882 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 10:27:26,983 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.100s]
+2024-05-20 10:27:26,983 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 10:27:26,983 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179A3ABAA90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:26,992 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-20 10:27:31,118 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.126s]
+2024-05-20 10:27:31,118 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 10:27:31,118 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179AF4D08D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:31,118 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 10:27:31,118 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-20 10:27:35,190 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.072s]
+2024-05-20 10:27:35,191 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 10:27:35,191 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179AF4D2510>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:35,192 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 10:27:35,192 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-20 10:27:39,311 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.119s]
+2024-05-20 10:27:39,311 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 10:27:39,332 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 10:27:43,416 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.084s]
+2024-05-20 10:27:43,416 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 10:27:43,416 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179AF4D8990>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:43,417 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-20 10:27:47,545 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.127s]
+2024-05-20 10:27:47,545 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 10:27:47,545 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179AF4D3DD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:47,546 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 10:27:47,547 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-20 10:27:51,656 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.110s]
+2024-05-20 10:27:51,656 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 10:27:51,656 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x00000179AF4D2390>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 10:27:51,656 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 10:27:51,656 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-20 10:27:55,764 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.108s]
+2024-05-20 10:27:55,764 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 10:29:06,671 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-20 10:29:08,180 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-20 10:29:09,071 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-20 10:29:11,105 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-20 10:29:12,481 - INFO - Checking icons for qt designer app.
+2024-05-20 10:29:12,783 - INFO - all icons have been checked and missing icons generated!
+2024-05-20 10:29:36,907 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 10:29:37,052 - DEBUG - https://localhost:9200 "HEAD / HTTP/1.1" 200 0
+2024-05-20 10:29:37,052 - INFO - HEAD https://localhost:9200/ [status:200 duration:0.145s]
+2024-05-20 10:29:37,370 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 10:29:37,370 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.318s]
+2024-05-20 10:30:46,490 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 10:30:46,490 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 10:30:46,490 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 10:30:46,494 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 10:30:46,495 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 10:30:46,495 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 10:30:46,495 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 10:30:46,495 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 10:30:46,495 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 10:30:46,496 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 10:30:46,496 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 10:30:47,487 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 10:30:48,012 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 10:30:48,012 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.525s]
+2024-05-20 12:03:19,656 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-20 12:03:20,667 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-20 12:03:21,602 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-20 12:03:23,609 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-20 12:03:24,328 - INFO - Checking icons for qt designer app.
+2024-05-20 12:03:24,635 - INFO - all icons have been checked and missing icons generated!
+2024-05-20 12:03:38,192 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:03:42,262 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.069s]
+2024-05-20 12:03:42,262 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:03:42,262 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D6616B590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:03:42,270 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-20 12:03:46,347 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.077s]
+2024-05-20 12:03:46,347 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:03:46,347 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D66138C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:03:46,347 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 12:03:46,347 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-20 12:03:50,417 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.069s]
+2024-05-20 12:03:50,417 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:03:50,417 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D661397D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:03:50,417 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 12:03:50,417 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-20 12:03:54,498 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.081s]
+2024-05-20 12:03:54,498 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:03:54,600 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:03:58,675 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.075s]
+2024-05-20 12:03:58,675 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:03:58,675 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D66139350>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:03:58,675 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-20 12:04:02,768 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.093s]
+2024-05-20 12:04:02,768 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:04:02,768 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D5AE72950>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:04:02,768 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 12:04:02,768 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-20 12:04:06,868 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.100s]
+2024-05-20 12:04:06,868 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:04:06,868 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000023D66175790>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-20 12:04:06,868 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-20 12:04:06,868 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-20 12:04:10,960 - INFO - POST https://localhost:9200/tina1/_search [status:N/A duration:4.092s]
+2024-05-20 12:04:10,960 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:05:05,071 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-20 12:05:06,110 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-20 12:05:07,011 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-20 12:05:08,738 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-20 12:05:09,989 - INFO - Checking icons for qt designer app.
+2024-05-20 12:05:10,263 - INFO - all icons have been checked and missing icons generated!
+2024-05-20 12:05:16,504 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:05:16,927 - DEBUG - https://localhost:9200 "HEAD / HTTP/1.1" 200 0
+2024-05-20 12:05:16,927 - INFO - HEAD https://localhost:9200/ [status:200 duration:0.423s]
+2024-05-20 12:05:17,129 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 12:05:17,129 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.202s]
+2024-05-20 12:05:23,727 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:23,727 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:05:23,727 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:23,743 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:23,743 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:05:23,743 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:23,743 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:23,743 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:05:23,743 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:23,743 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:23,743 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:05:23,759 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:05:23,884 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 12:05:23,884 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.125s]
+2024-05-20 12:05:58,857 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:58,857 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:05:58,857 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:58,857 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:58,857 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:05:58,857 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:58,857 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:58,857 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:05:58,857 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:05:58,857 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:05:58,857 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:05:59,901 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:06:00,200 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 12:06:00,200 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.298s]
+2024-05-20 12:06:07,480 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:07,480 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:06:07,480 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:07,481 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:07,481 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:06:07,481 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:07,481 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:07,481 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:06:07,481 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:07,481 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:07,481 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:06:07,638 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:06:07,671 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 12:06:07,671 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.033s]
+2024-05-20 12:06:22,582 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:22,582 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-20 12:06:22,582 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:22,582 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:22,582 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-20 12:06:22,582 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:22,582 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:22,582 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-20 12:06:22,582 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-20 12:06:22,582 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-20 12:06:22,582 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-20 12:06:22,623 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-20 12:06:22,670 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-20 12:06:22,670 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.047s]
+2024-05-24 01:20:30,806 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-24 01:20:32,313 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-24 01:20:33,650 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-24 01:20:39,215 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-24 01:20:41,758 - INFO - Checking icons for qt designer app.
+2024-05-24 01:20:43,280 - INFO - all icons have been checked and missing icons generated!
+2024-05-24 01:34:04,583 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-24 01:34:05,104 - DEBUG - https://localhost:9200 "HEAD / HTTP/1.1" 200 0
+2024-05-24 01:34:05,104 - INFO - HEAD https://localhost:9200/ [status:200 duration:0.521s]
+2024-05-24 01:34:05,447 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-24 01:34:05,447 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.343s]
+2024-05-24 01:34:07,173 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-24 01:34:07,173 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-24 01:34:07,173 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-24 01:34:07,196 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-24 01:34:07,196 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-24 01:34:07,196 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-24 01:34:07,196 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-24 01:34:07,196 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-24 01:34:07,196 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ClosedPoolError(HTTPSConnectionPool(host='localhost', port=9200): Pool is closed.)
+2024-05-24 01:34:07,196 - INFO - HEAD https://localhost:9200/ [status:N/A duration:0.000s]
+2024-05-24 01:34:07,196 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-24 01:34:08,395 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-24 01:34:08,887 - DEBUG - https://localhost:9200 "POST /tina1/_search HTTP/1.1" 200 0
+2024-05-24 01:34:08,887 - INFO - POST https://localhost:9200/tina1/_search [status:200 duration:0.492s]
+2024-05-24 02:01:00,692 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-24 02:01:01,965 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-24 02:01:02,406 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-24 02:01:06,711 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-24 02:01:07,865 - INFO - Checking icons for qt designer app.
+2024-05-24 02:01:08,133 - INFO - all icons have been checked and missing icons generated!
+2024-05-24 02:08:31,479 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-24 02:08:35,548 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.070s]
+2024-05-24 02:08:35,548 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-24 02:08:35,548 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FAACB10>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:35,548 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-24 02:08:39,583 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.034s]
+2024-05-24 02:08:39,583 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-24 02:08:39,583 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FAAE7D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:39,583 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-24 02:08:39,583 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-24 02:08:43,631 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.048s]
+2024-05-24 02:08:43,631 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-24 02:08:43,631 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FAAF050>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:43,631 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-24 02:08:43,631 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-24 02:08:47,692 - INFO - HEAD https://localhost:9200/ [status:N/A duration:4.061s]
+2024-05-24 02:08:47,692 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-24 02:08:47,704 - DEBUG - Starting new HTTPS connection (1): localhost:9200
+2024-05-24 02:08:51,780 - INFO - HEAD https://localhost:9200/tina1 [status:N/A duration:4.076s]
+2024-05-24 02:08:51,780 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2024-05-24 02:08:51,780 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FAAE650>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:51,780 - DEBUG - Starting new HTTPS connection (2): localhost:9200
+2024-05-24 02:08:55,863 - INFO - HEAD https://localhost:9200/tina1 [status:N/A duration:4.083s]
+2024-05-24 02:08:55,863 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2024-05-24 02:08:55,863 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FE0D710>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:55,863 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-24 02:08:55,863 - DEBUG - Starting new HTTPS connection (3): localhost:9200
+2024-05-24 02:08:59,956 - INFO - HEAD https://localhost:9200/tina1 [status:N/A duration:4.094s]
+2024-05-24 02:08:59,956 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2024-05-24 02:08:59,956 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\KLTN\QLCN\1304\env2203\Lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 202, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<elastic_transport._node._urllib3_chain_certs.HTTPSConnection object at 0x0000019E9FE0F210>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
+2024-05-24 02:08:59,956 - INFO - Resurrected node <Urllib3HttpNode(https://localhost:9200)> (force=False)
+2024-05-24 02:08:59,956 - DEBUG - Starting new HTTPS connection (4): localhost:9200
+2024-05-24 02:09:04,042 - INFO - HEAD https://localhost:9200/tina1 [status:N/A duration:4.085s]
+2024-05-24 02:09:04,042 - WARNING - Node <Urllib3HttpNode(https://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2024-05-24 02:10:41,264 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-05-24 02:10:42,291 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-05-24 02:10:43,176 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-05-24 02:10:44,471 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-05-24 02:10:45,122 - INFO - Checking icons for qt designer app.
+2024-05-24 02:10:45,280 - INFO - all icons have been checked and missing icons generated!
+2024-06-11 15:22:37,553 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-06-11 15:22:38,670 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-06-11 15:22:39,178 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-06-11 15:22:42,523 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-06-11 15:22:43,883 - INFO - Checking icons for qt designer app.
+2024-06-11 15:22:44,245 - INFO - all icons have been checked and missing icons generated!
+2024-06-11 15:23:34,975 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-06-11 15:23:36,000 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2024-06-11 15:23:36,424 - DEBUG - https://huggingface.co:443 "HEAD /VoVanPhuc/sup-SimCSE-VietNamese-phobert-base/resolve/main/config.json HTTP/1.1" 200 0
+2024-06-11 15:23:39,135 - INFO - Checking icons for TINA1 theme. Icons color: #f1f2f6
+2024-06-11 15:23:39,336 - INFO - Checking icons for qt designer app.
+2024-06-11 15:23:39,506 - INFO - all icons have been checked and missing icons generated!

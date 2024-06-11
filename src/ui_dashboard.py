@@ -323,7 +323,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -334,6 +334,6 @@ class Ui_MainWindow(object):
         self.all_btn.setText(_translate("MainWindow", "  All"))
         self.tags_btn.setText(_translate("MainWindow", "  Tags"))
         self.summarize_btn.setText(_translate("MainWindow", "  Summarize"))
-        self.search_note_btn.setText(_translate("MainWindow", "Search"))
+        self.search_note_btn.setText(_translate("MainWindow", "  Search"))
         self.settings_btn.setText(_translate("MainWindow", "  Settings"))
 from Custom_Widgets.QCustomSlideMenu import QCustomSlideMenu
