@@ -26,7 +26,7 @@ class ElasticClient:
         if not self.client.ping():
             self._init_client()
 
-    def create_index_if_not_exists(self, index_name="tina1", path_index="test_search/config/index_tina.json"):
+    def create_index_if_not_exists(self, index_name="tina1", path_index="json-styles/elastic.json"):
         if not self.client.indices.exists(index=index_name):
             with open(path_index) as index_file:
                 source = index_file.read().strip()

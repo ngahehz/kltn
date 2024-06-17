@@ -8,7 +8,7 @@ from sklearn.metrics import pairwise_distances_argmin_min
 from underthesea import word_tokenize
 
 
-MODEL_PATH = "D:/KLTN/QLCN/data/models"
+MODEL_PATH = "data/models"
 
 bang_nguyen_am = [['a', 'à', 'á', 'ả', 'ã', 'ạ', 'a'],
                   ['ă', 'ằ', 'ắ', 'ẳ', 'ẵ', 'ặ', 'aw'],
@@ -123,9 +123,9 @@ def text_preprocess(document):
     document = re.sub(r'\s+', ' ', document).strip()
     return document
 
-with open("D:/KLTN/QLCN/data/vietnamese-stopwords-dash.txt", "r", encoding='utf-8') as file:
+with open("data/vietnamese-stopwords-dash.txt", "r", encoding='utf-8') as file:
     stopword_vi_list = file.read().splitlines()
-with open("D:/KLTN/QLCN/data/english-stopwords.txt", "r", encoding='utf-8') as file:
+with open("data/english-stopwords.txt", "r", encoding='utf-8') as file:
     stopword_eng_list = file.read().splitlines()
 
 def remove_stopwords(line):
@@ -165,17 +165,13 @@ def predict_tag (text):
 
 def summarizer(text):
     contents = re.split(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s', text)
+    contents_lowercase = [sentence.lower().strip() for sentence in contents]
     vectorizer = TfidfVectorizer()
-    X = vectorizer.fit_transform(contents)  
+    X = vectorizer.fit_transform(contents_lowercase)  
     if len(contents) <= 3:
         return text + " (Độ dài văn bản quá ngắn, không thể tóm tắt)"
-    if len(contents) <= 10:
-        n_clusters = 3 
-    elif len(contents) <= 20:
-        n_clusters = 5 
-    else:
-        n_clusters = 7  
-    kmeans = KMeans(n_clusters=n_clusters)
+    n_clusters = int(len(contents) ** 0.5)
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42) # để kết quả giữ nguyên
     kmeans.fit(X)
     avg = []
     for j in range(n_clusters):
@@ -189,42 +185,11 @@ def summarizer(text):
 
 
 
-# from nltk.translate.bleu_score import corpus_bleu
-# from rouge import Rouge
-
-# def evaluate_summarizer(summarizer_function, texts, references):
-#     summaries = [summarizer_function(text) for text in texts]
-
-#     bleu_score = corpus_bleu([[ref.split()] for ref in references], [sum.split() for sum in summaries])
-    
-#     rouge = Rouge()
-#     rouge_scores = rouge.get_scores(summaries, references, avg=True)
-
-#     return bleu_score, rouge_scores
 
 
 
-from sklearn.feature_extraction.text import CountVectorizer
-from nltk import sent_tokenize
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
-
-def content_based(summary, full_text):
-    sentences = sent_tokenize(full_text)
-
-    vectorizer = CountVectorizer().fit(sentences)
-    full_text_vector = vectorizer.transform([full_text])
-    summary_vector = vectorizer.transform([summary])
-
-    score = cosine_similarity(full_text_vector, summary_vector)[0][0]
-
-    return score
 
 
-# abc = summarizer(texts[0])
-
-# score = content_based(abc, texts[0])
-# print(score)
 
 
 

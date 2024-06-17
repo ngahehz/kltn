@@ -82,12 +82,16 @@ class MyWindow(QMainWindow):
 
         if btnName == "top_logo":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_1)
+            if self._document_widget.ui.info_right.isExpanded():
+                self._document_widget.ui.info_right.collapseMenu()
 
         elif btnName == "menu_btn":
             pass
 
         elif btnName == "all_btn":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_3)
+            if self._document_widget.ui.info_right.isExpanded():
+                self._document_widget.ui.info_right.collapseMenu()
             self._document_widget.load_table()
 
         elif btnName == "tags_btn":
@@ -99,12 +103,18 @@ class MyWindow(QMainWindow):
                 self.ui.left_menu_2.expandMenu()
 
         elif btnName == "settings_btn":
+            if self._document_widget.ui.info_right.isExpanded():
+                self._document_widget.ui.info_right.collapseMenu()
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_2)
 
         elif btnName == "search_note_btn":
+            if self._document_widget.ui.info_right.isExpanded():
+                self._document_widget.ui.info_right.collapseMenu()
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_5)
 
         elif btnName == "summarize_btn":
+            if self._document_widget.ui.info_right.isExpanded():
+                self._document_widget.ui.info_right.collapseMenu()
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_4)
 
 

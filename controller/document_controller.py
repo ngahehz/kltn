@@ -145,10 +145,14 @@ class DocumentController(object):
             
     def delete_file(self, id):
         deleteFile(id)
+        self.pdf_thread = ElasticThread(id, None, 2) # mới thêm
+        self.pdf_thread.start()
+        self.pdf_thread.finished.connect(lambda: print("Done"))
         del self.get_files()[id]
         for key in self.get_files_tags(id):
             deleteFileTag(key)
             del self.get_files_tags()[key]
+
 
     ### LABEL ###
     def check_name_label_is_exist(self, name):
